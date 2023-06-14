@@ -31,6 +31,23 @@ namespace MATINFO.Metier
                         uneCategorie.LesMateriels.Add(unMateriel);
                 }
             }
+
+            foreach (EstAttribue uneAttribution in LesAttributions)
+            {
+                // Liaison Materiel / Attribution
+                foreach (Materiel unMateriel in LesMateriels)
+                {
+                    if (uneAttribution.IDMateriel == unMateriel.IDMateriel)
+                        unMateriel.LesAttributions.Add(uneAttribution);
+                }
+
+                // Liaison Personnel / Attribution
+                foreach (Personnel unPersonnel in LePersonnel)
+                {
+                    if (uneAttribution.IDPersonnel == unPersonnel.IDPersonnel)
+                        unPersonnel.LesAttributions.Add(uneAttribution);
+                }
+            }
         }
     }
 }
