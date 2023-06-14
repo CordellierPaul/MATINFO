@@ -4,15 +4,17 @@
  * Purpose: Definition of the Interface IDonnee
  ***********************************************************************/
 
+using System.Collections.ObjectModel;
+
 namespace MATINFO.Metier
 {
-    public interface ICrud
+    public interface ICrud<T>
     {
         void Create();
-        ICrud? Read();
+        void Read();
         void Update();
         void Delete();
 
-        //ObservableCollection<T> FindAll();
+        ObservableCollection<T> FindAll();
     }
 }

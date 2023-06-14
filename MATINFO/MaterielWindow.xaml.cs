@@ -25,6 +25,8 @@ namespace MATINFO
         {
             InitializeComponent();
 
+            lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
+
             DataContext = this;
         }
         

@@ -11,7 +11,7 @@ using System.Data;
 
 namespace MATINFO.Metier
 {
-    public class CategorieMateriel : ICrud
+    public class CategorieMateriel : ICrud<CategorieMateriel>
     {
         public int IDCategorieMateriel { get; set; }
         public string Nom { get; set; }
@@ -23,16 +23,17 @@ namespace MATINFO.Metier
             IDCategorieMateriel = idCategorieMateriel;
             Nom = nom;
         }
-   
+
+        public CategorieMateriel() : this(1, "") { }
+
         public void Create()
         {
             // TODO: implement
         }
    
-        public ICrud? Read()
+        public void Read()
         {
             // TODO: implement
-            return null;
         }
    
         public void Update()
@@ -45,7 +46,7 @@ namespace MATINFO.Metier
             // TODO: implement
         }
 
-        public static ObservableCollection<CategorieMateriel> FindAll()
+        public ObservableCollection<CategorieMateriel> FindAll()
         {
             ObservableCollection<CategorieMateriel> lesCategories = new ObservableCollection<CategorieMateriel>();
             AccesDonnees accesBD = new AccesDonnees();

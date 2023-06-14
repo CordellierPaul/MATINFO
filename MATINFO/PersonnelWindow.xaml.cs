@@ -25,6 +25,8 @@ namespace MATINFO
         {
             InitializeComponent();
 
+            lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
+
             DataContext = this;
         }
 
@@ -37,7 +39,7 @@ namespace MATINFO
 
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            if (lvPersonnels.SelectedItem != null)
+            if (lvPersonnel.SelectedItem != null)
             {
                 MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce personnel ?", "Confirmation de suppression", MessageBoxButton.YesNo);
 
@@ -45,7 +47,7 @@ namespace MATINFO
                 {
                     //LesPersonnels.Remove((Personnel)lvPersonnels.SelectedItem);
 
-                    lvPersonnels.SelectedIndex = 0;
+                    lvPersonnel.SelectedIndex = 0;
                 }
             }
         }

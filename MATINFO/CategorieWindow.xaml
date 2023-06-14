@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MATINFO"
-    xmlns:metier="clr-namespace:MATINFO.Metier"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:metier="clr-namespace:MATINFO.Metier"
     Title="CategorieRep"
     MinWidth="800"
     MinHeight="450"
@@ -29,14 +29,7 @@
             VerticalAlignment="Center"
             Content="MATINFO"
             FontSize="20"
-            Foreground="White">
-            <Label.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FF3561CC" />
-                </LinearGradientBrush>
-            </Label.Background>
-        </Label>
+            Foreground="White" />
 
         <Button
             x:Name="btnHome"
@@ -100,7 +93,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        
+
         <Button
             x:Name="btModifier"
             Grid.Row="1"
@@ -118,7 +111,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        
+
         <Button
             x:Name="btSupprimer"
             Grid.Row="1"

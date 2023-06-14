@@ -10,7 +10,7 @@ using System.Data;
 
 namespace MATINFO.Metier
 {
-    public class EstAttribue : ICrud
+    public class EstAttribue : ICrud<EstAttribue>
     {
         public int IDMateriel { get; set; }
         public int IDPersonnel { get; set; }
@@ -25,15 +25,17 @@ namespace MATINFO.Metier
             Commentaire = commentaire;
         }
 
+        public EstAttribue() : this(1, 1, DateTime.Today, "") { }
+
+
         public void Create()
         {
             // TODO: implement
         }
    
-        public ICrud? Read()
+        public void Read()
         {
             // TODO: implement
-            return null;
         }
    
         public void Update()
@@ -46,7 +48,7 @@ namespace MATINFO.Metier
             // TODO: implement
         }
 
-        public static ObservableCollection<EstAttribue> FindAll()
+        public ObservableCollection<EstAttribue> FindAll()
         {
             ObservableCollection<EstAttribue> lesAttributions = new ObservableCollection<EstAttribue>();
             AccesDonnees accesBD = new AccesDonnees();

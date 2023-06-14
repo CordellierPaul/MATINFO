@@ -11,7 +11,7 @@ using System.Data;
 
 namespace MATINFO.Metier
 {
-    public class Personnel : ICrud
+    public class Personnel : ICrud<Personnel>
     {
         public int IDPersonnel { get; set; }
         public string Nom { get; set; }
@@ -27,16 +27,17 @@ namespace MATINFO.Metier
             Prenom = prenom;
             EMail = eMail;
         }
-   
+
+        public Personnel() : this(1, "", "", "") { }
+
         public void Create()
         {
             // TODO: implement
         }
    
-        public ICrud? Read()
+        public void Read()
         {
             // TODO: implement
-            return null;
         }
    
         public void Update()
@@ -49,7 +50,7 @@ namespace MATINFO.Metier
             // TODO: implement
         }
 
-        public static ObservableCollection<Personnel> FindAll()
+        public ObservableCollection<Personnel> FindAll()
         {
             ObservableCollection<Personnel> lePersonnel = new ObservableCollection<Personnel>();
             AccesDonnees accesBD = new AccesDonnees();

@@ -12,15 +12,16 @@ namespace MATINFO.Metier
     {
         public ObservableCollection<CategorieMateriel> LesCategories { get; set; }
         public ObservableCollection<Materiel> LesMateriels { get; set; }
-        public ObservableCollection<Personnel> LesPersonnels { get; set; }
+        public ObservableCollection<Personnel> LePersonnel { get; set; }
         public ObservableCollection<EstAttribue> LesAttributions { get; set; }
 
         public GestionDonnees()
         {
-            //LesCategories = CategorieMateriel.FindAll();
-            //LesMateriels = Materiel.FindAll();
-            //LesPersonnels = Personnel.FindAll();
-            //LesAttributions = EstAttribue.FindAll();
+
+            //LesCategories = new CategorieMateriel().FindAll();
+            //LesMateriels = new Materiel().FindAll();
+            //LePersonnel = new Personnel().FindAll();
+            //LesAttributions = new EstAttribue().FindAll();
 
             LesCategories = new ObservableCollection<CategorieMateriel>()
             {
@@ -28,8 +29,14 @@ namespace MATINFO.Metier
                 new CategorieMateriel(2, "Catégorie2"),
                 new CategorieMateriel(3, "Catégorie3")
             };
-            LesMateriels = new ObservableCollection<Materiel>();
-            LesPersonnels = new ObservableCollection<Personnel>();
+            LesMateriels = new ObservableCollection<Materiel>()
+            {
+                new Materiel(1, 1, "FOIFHOIZE", "Nom", "Réference")
+            };
+            LePersonnel = new ObservableCollection<Personnel>()
+            {
+                new Personnel(1, "Jean", "Prénom", "abirefgbli@gmail.com")
+            };
             LesAttributions = new ObservableCollection<EstAttribue>();
         }
     }
