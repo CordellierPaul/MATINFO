@@ -15,12 +15,10 @@
     mc:Ignorable="d">
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
 
         <!--  En-tête  -->
         <Border Padding="10" Background="#FF0D044C" />
@@ -35,7 +33,7 @@
             Grid.Row="1"
             Width="121"
             Height="30"
-            Margin="10,72,0,0"
+            Margin="56,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="White"
@@ -53,7 +51,7 @@
             Grid.Row="1"
             Width="121"
             Height="30"
-            Margin="10,107,0,0"
+            Margin="56,146,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="White"
@@ -72,7 +70,7 @@
             Grid.Row="1"
             Width="121"
             Height="30"
-            Margin="10,142,0,0"
+            Margin="56,181,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="White"
@@ -91,7 +89,7 @@
             Grid.Row="1"
             Width="121"
             Height="30"
-            Margin="10,177,0,0"
+            Margin="56,216,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="White"
@@ -110,11 +108,11 @@
             Grid.Row="1"
             Width="121"
             Height="30"
-            Margin="10,212,0,0"
+            Margin="56,260,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="White"
-            Content="TOUT "
+            Content="Afficher tout"
             FontSize="16"
             Foreground="White">
             <Button.Background>
@@ -159,10 +157,6 @@
                     <Setter Property="FontSize" Value="12" />
                 </Style>
             </ListView.Resources>
-
-            <ListView.Effect>
-                <DropShadowEffect />
-            </ListView.Effect>
 
             <ListView.View>
                 <GridView>
@@ -293,6 +287,12 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Label
+            Grid.Row="1"
+            Margin="83,80,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Filtrer par :" />
 
     </Grid>
 </Window>
