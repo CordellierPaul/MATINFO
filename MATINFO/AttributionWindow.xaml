@@ -47,13 +47,11 @@
 
         <Rectangle
             Grid.Row="1"
-            Height="283"
-            Margin="298,51,70,0"
-            VerticalAlignment="Top"
+            Margin="298,51,37,40"
             Stroke="Black" />
         <Label
             Grid.Row="1"
-            Margin="557,33,0,0"
+            Margin="572,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="White"
@@ -61,19 +59,68 @@
             FontSize="16"
             FontWeight="Bold"
             Foreground="Black" />
+        <Label
+            Grid.Row="1"
+            Margin="371,33,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            Content="Matériel"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="Black" />
+        <Label
+            Grid.Row="1"
+            Margin="0,33,128,0"
+            VerticalAlignment="Top"
+            Background="White"
+            Content="Personnel"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="Black" HorizontalAlignment="Right" Width="84" />
+
+        <ListView
+            x:Name="lvMateriel"
+            Grid.Row="1"
+            Margin="325,81,0,71"
+            ItemsSource="{Binding LesMateriels}" HorizontalAlignment="Left" Width="187">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <ListView
             x:Name="lvAttribution"
             Grid.Row="1"
-            Height="222"
-            Margin="543,81,328,0"
-            VerticalAlignment="Top"
+            Margin="543,81,304,71"
             ItemsSource="{Binding LesAttributions}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
                         Width="auto"
                         DisplayMemberBinding="{Binding DateAttribution}"
+                        Header="Date" />
+                    <GridViewColumn
+                        Width="auto"
+                        DisplayMemberBinding="{Binding Commentaire}"
+                        Header="Commentaire" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView
+            x:Name="lvPersonnel"
+            Grid.Row="1"
+            Margin="0,81,65,71"
+            ItemsSource="{Binding LePersonnel}" HorizontalAlignment="Right" Width="209">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Nom}"
                         Header="Nom" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Prenom}"
+                        Header="Prenom" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -132,5 +179,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+
     </Grid>
 </Window>

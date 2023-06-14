@@ -28,8 +28,8 @@ namespace MATINFO
 
             lvGeneral.Items.Refresh();
 
-            AccesDonnees accesBD = new AccesDonnees();
-            accesBD.OpenConnection();
+            //AccesDonnees accesBD = new AccesDonnees();
+            //accesBD.OpenConnection();
 
             // Test de connexion à la base de données
             //MessageBox.Show("Résultat de la connexion : " + accesBD.OpenConnection());
@@ -37,30 +37,37 @@ namespace MATINFO
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow window = new MainWindow();
+            MainWindow mainWindow = new MainWindow();
             Close();
-            window.Show();
+            mainWindow.Show();
         }
 
         private void btCategorieWindow_Click(object sender, RoutedEventArgs e)
         {
-            CategorieWindow categorieRep = new CategorieWindow();
+            CategorieWindow categorieWindow = new CategorieWindow();
             Close();
-            categorieRep.Show();
+            categorieWindow.Show();
         }
 
         private void btMaterielWindow_Click(object sender, RoutedEventArgs e)
         {
-            MaterielWindow materielRep = new MaterielWindow();
+            MaterielWindow materielWindow = new MaterielWindow();
             Close();
-            materielRep.Show();
+            materielWindow.Show();
         }
 
         private void btPersonnelWindow_Click(object sender, RoutedEventArgs e)
         {
-            PersonnelWindow personnelRep = new PersonnelWindow();
+            PersonnelWindow personnelWindow = new PersonnelWindow();
             Close();
-            personnelRep.Show();
+            personnelWindow.Show();
+        }
+
+        private void btAttribution_Click(object sender, RoutedEventArgs e)
+        {
+            AttributionWindow attributionWindow = new AttributionWindow();
+            Close();
+            attributionWindow.Show();
         }
     }
 }
