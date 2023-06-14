@@ -45,9 +45,11 @@ namespace MATINFO.Metier
             // TODO: implement
         }
    
-        public void Delete(int idDonnee)
+        public void Delete()
         {
-            // TODO: implement
+            AccesDonnees accesBD = new AccesDonnees();
+            string requete = "delete from categorie_materiel where idcategorie = " + IDCategorieMateriel + " ;";
+            accesBD.SetData(requete);
         }
 
         public ObservableCollection<CategorieMateriel> FindAll()

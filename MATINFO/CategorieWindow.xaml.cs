@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MATINFO.Metier;
 
 namespace MATINFO
 {
@@ -43,9 +44,11 @@ namespace MATINFO
             {
                 MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette catégorie ?", "Confirmation de suppression", MessageBoxButton.YesNo);
 
-                if (result == MessageBoxResult.Yes)
+                if (result == MessageBoxResult.Yes && lvCategorie.SelectedItem is CategorieMateriel categorie)
                 {
-                    //LesCategories.Remove((CategorieMateriel)lvCategorie.SelectedItem);
+                    donneesActuelles.LesCategories.Remove(categorie);
+
+                    categorie.Delete();
 
                     lvCategorie.SelectedIndex = 0;
                 }
