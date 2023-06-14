@@ -22,6 +22,8 @@ namespace MATINFO.Metier
         {
             IDCategorieMateriel = idCategorieMateriel;
             Nom = nom;
+
+            lesMateriels = new List<Materiel>();
         }
 
         public CategorieMateriel() : this(1, "") { }

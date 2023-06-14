@@ -26,6 +26,8 @@ namespace MATINFO.Metier
             Nom = nom;
             Prenom = prenom;
             EMail = eMail;
+
+            LesAttributions = new List<EstAttribue>();
         }
 
         public Personnel() : this(1, "", "", "") { }
