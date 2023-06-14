@@ -56,10 +56,9 @@ namespace MATINFO.Metier
         {
             // Suppression récurisve des attributions
             foreach (EstAttribue uneAttribution in LesAttributions)
-            {
                 uneAttribution.Delete();
-                LesAttributions.Remove(uneAttribution);
-            }
+
+            LesAttributions.Clear();
 
             AccesDonnees accesBD = new AccesDonnees();
             string requete = "delete from materiel where idmateriel = " + IDMateriel + " ;";

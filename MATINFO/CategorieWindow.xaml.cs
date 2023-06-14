@@ -33,9 +33,9 @@ namespace MATINFO
 
                 if (result == MessageBoxResult.Yes && lvCategorie.SelectedItem is CategorieMateriel categorie)
                 {
-                    donneesActuelles.LesCategories.Remove(categorie);
-
                     categorie.Delete();
+
+                    donneesActuelles.LesCategories.Remove(categorie);
 
                     lvCategorie.SelectedIndex = 0;
                 }

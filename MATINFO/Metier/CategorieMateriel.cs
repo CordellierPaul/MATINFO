@@ -42,10 +42,9 @@ namespace MATINFO.Metier
         {
             // Suppression récurisve du matériel
             foreach (Materiel unMateriel in LesMateriels)
-            {
                 unMateriel.Delete();
-                LesMateriels.Remove(unMateriel);
-            }
+            
+            LesMateriels.Clear();
 
             AccesDonnees accesBD = new AccesDonnees();
             string requete = "delete from categorie_materiel where idcategorie = " + IDCategorieMateriel + " ;";

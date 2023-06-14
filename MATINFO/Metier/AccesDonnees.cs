@@ -27,6 +27,8 @@ namespace MATINFO.Metier
         {
             try
             {
+                // Site pour la modification de la base de données : https://srv-peda.iut-acy.local/phppgadmin/
+
                 NpgSQLConnect = new NpgsqlConnection
                 {
                     ConnectionString = "Server=srv-peda-new;port=5433;Database=projets_wpf;Search Path=bd_matinfo;uid=cordellp;password=HADJjx;"

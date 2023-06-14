@@ -3,26 +3,11 @@
 /* Date de création :  06/12/2022 16:19:40                      */
 /*==============================================================*/
 
-
-drop index if exists CATEGORIE_MATERIEL_PK;
-
 drop table if exists CATEGORIE_MATERIEL;
-
-drop index if exists EST_ATTRIBUE2_FK;
-
-drop index if exists EST_ATTRIBUE_FK;
-
-drop index if exists EST_ATTRIBUE_PK;
 
 drop table if exists EST_ATTRIBUE;
 
-drop index if exists APPARTIENT_A_FK;
-
-drop index if exists MATERIEL_PK;
-
 drop table if exists MATERIEL;
-
-drop index if exists PERSONNEL_PK;
 
 drop table if exists PERSONNEL;
 

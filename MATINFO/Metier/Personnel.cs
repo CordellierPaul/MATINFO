@@ -43,12 +43,11 @@ namespace MATINFO.Metier
    
         public void Delete()
         {
-            // Suppression récurisve des attrinutions
+            // Suppression récurisve des attribution
             foreach (EstAttribue uneAttribution in LesAttributions)
-            {
                 uneAttribution.Delete();
-                LesAttributions.Remove(uneAttribution);
-            }
+
+            LesAttributions.Clear();
 
             AccesDonnees accesBD = new AccesDonnees();
             string requete = "delete from personnel where idpersonnel = " + IDPersonnel + " ;";
