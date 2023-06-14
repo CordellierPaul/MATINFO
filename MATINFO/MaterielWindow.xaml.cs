@@ -17,7 +17,6 @@ namespace MATINFO
             DataContext = this;
         }
 
-        #region Gesiton des évenements
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -27,20 +26,19 @@ namespace MATINFO
 
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            if (lvMateriel.SelectedItem != null)
+            if (lvMateriel.SelectedItem == null)
+                return;
+
+            MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce matériel ?", "Confirmation de suppression", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes && lvMateriel.SelectedItem is Materiel materiel)
             {
-                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce matériel ?", "Confirmation de suppression", MessageBoxButton.YesNo);
+                donneesActuelles.LesMateriels.Remove(materiel);
 
-                if (result == MessageBoxResult.Yes && lvMateriel.SelectedItem is Materiel materiel)
-                {
-                    donneesActuelles.LesMateriels.Remove(materiel);
+                materiel.Delete();
 
-                    materiel.Delete();
-
-                    lvMateriel.SelectedIndex = 0;
-                }
+                lvMateriel.SelectedIndex = 0;
             }
         }
-        #endregion
     }
 }

@@ -1,17 +1,19 @@
 ﻿<Window
-    x:Class="MATINFO.CategorieWindow"
+    x:Class="MATINFO.AttributionWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:MATINFO"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MATINFO"
     xmlns:metier="clr-namespace:MATINFO.Metier"
-    Title="Catégories"
+    mc:Ignorable="d"
+    Title="Attributions"
+    Height="450"
+    Width="1000"
     MinWidth="800"
     MinHeight="450"
     ResizeMode="CanResize"
-    WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <metier:GestionDonnees x:Name="donneesActuelles" />
     </Window.DataContext>
@@ -51,26 +53,26 @@
             Stroke="Black" />
         <Label
             Grid.Row="1"
-            Margin="438,35,0,0"
+            Margin="557,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="White"
-            Content="Catégorie Matériel"
+            Content="Attribution"
             FontSize="16"
             FontWeight="Bold"
             Foreground="Black" />
         <ListView
-            x:Name="lvCategorie"
+            x:Name="lvAttribution"
             Grid.Row="1"
             Height="222"
-            Margin="338,81,111,0"
+            Margin="543,81,328,0"
             VerticalAlignment="Top"
-            ItemsSource="{Binding LesCategories}">
+            ItemsSource="{Binding LesAttributions}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
                         Width="auto"
-                        DisplayMemberBinding="{Binding Nom}"
+                        DisplayMemberBinding="{Binding DateAttribution}"
                         Header="Nom" />
                 </GridView>
             </ListView.View>

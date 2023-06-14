@@ -26,19 +26,19 @@ namespace MATINFO
 
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            if (lvCategorie.SelectedItem != null)
+            if (lvCategorie.SelectedItem == null)
+                return;
+
+            string messageConfirmationSupp = "Êtes-vous sûr de vouloir supprimer cette catégorie ? \nTous les matériels dans les catégories vont également être supprimés";
+            MessageBoxResult result = MessageBox.Show(messageConfirmationSupp, "Confirmation de suppression", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes && lvCategorie.SelectedItem is CategorieMateriel categorie)
             {
-                string messageConfirmationSupp = "Êtes-vous sûr de vouloir supprimer cette catégorie ? \nTous les matériels dans les catégories vont également être supprimés";
-                MessageBoxResult result = MessageBox.Show(messageConfirmationSupp, "Confirmation de suppression", MessageBoxButton.YesNo);
+                categorie.Delete();
 
-                if (result == MessageBoxResult.Yes && lvCategorie.SelectedItem is CategorieMateriel categorie)
-                {
-                    categorie.Delete();
+                donneesActuelles.LesCategories.Remove(categorie);
 
-                    donneesActuelles.LesCategories.Remove(categorie);
-
-                    lvCategorie.SelectedIndex = 0;
-                }
+                lvCategorie.SelectedIndex = 0;
             }
         }
     }

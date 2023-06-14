@@ -26,18 +26,18 @@ namespace MATINFO
 
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            if (lvPersonnel.SelectedItem != null)
+            if (lvPersonnel.SelectedItem == null)
+                return;
+
+            MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce personnel ?", "Confirmation de suppression", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes && lvPersonnel.SelectedItem is Personnel personnel)
             {
-                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce personnel ?", "Confirmation de suppression", MessageBoxButton.YesNo);
+                donneesActuelles.LePersonnel.Remove(personnel);
 
-                if (result == MessageBoxResult.Yes && lvPersonnel.SelectedItem is Personnel personnel)
-                {
-                    donneesActuelles.LePersonnel.Remove(personnel);
+                personnel.Delete();
 
-                    personnel.Delete();
-
-                    lvPersonnel.SelectedIndex = 0;
-                }
+                lvPersonnel.SelectedIndex = 0;
             }
         }
     }
