@@ -54,7 +54,7 @@ namespace MATINFO.Metier
         {
             ObservableCollection<Personnel> lePersonnel = new ObservableCollection<Personnel>();
             AccesDonnees accesBD = new AccesDonnees();
-            string requete = "select idpersonnel, nompersonnel, prenompersonnel, emailpersonnel from personnel ;";
+            string requete = "select idpersonnel, nompersonnel, prenompersonnel, emailpersonnel from personnel;";
             DataTable datas = accesBD.GetData(requete)!;
             if (datas != null)
             {
