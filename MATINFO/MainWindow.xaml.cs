@@ -11,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MATINFO.Metier;
@@ -43,21 +42,21 @@ namespace MATINFO
             window.Show();
         }
 
-        private void btnCategorieRep_Click(object sender, RoutedEventArgs e)
+        private void btCategorieWindow_Click(object sender, RoutedEventArgs e)
         {
             CategorieWindow categorieRep = new CategorieWindow();
             Close();
             categorieRep.Show();
         }
 
-        private void btnMaterielRep_Click(object sender, RoutedEventArgs e)
+        private void btMaterielWindow_Click(object sender, RoutedEventArgs e)
         {
             MaterielWindow materielRep = new MaterielWindow();
             Close();
             materielRep.Show();
         }
 
-        private void btnPersonnelRep_Click(object sender, RoutedEventArgs e)
+        private void btPersonnelWindow_Click(object sender, RoutedEventArgs e)
         {
             PersonnelWindow personnelRep = new PersonnelWindow();
             Close();

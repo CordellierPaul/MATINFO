@@ -229,6 +229,7 @@
         </Button>
 
         <Button
+            x:Name="btCategorieWindow"
             Grid.Row="1"
             Width="185"
             Height="30"
@@ -236,7 +237,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             BorderBrush="White"
-            Click="btnCategorieRep_Click"
+            Click="btCategorieWindow_Click"
             Content="Catégories du matériel"
             FontSize="16"
             Foreground="White">
@@ -249,6 +250,7 @@
         </Button>
 
         <Button
+            x:Name="btMaterielWindow"
             Grid.Row="1"
             Width="165"
             Height="30"
@@ -256,7 +258,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             BorderBrush="White"
-            Click="btnMaterielRep_Click"
+            Click="btMaterielWindow_Click"
             Content="Matériels"
             FontSize="16"
             Foreground="White">
@@ -269,6 +271,7 @@
         </Button>
 
         <Button
+            x:Name="btPersonnelWindow"
             Grid.Row="1"
             Width="166"
             Height="30"
@@ -276,7 +279,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             BorderBrush="White"
-            Click="btnPersonnelRep_Click"
+            Click="btPersonnelWindow_Click"
             Content="Personnel"
             FontSize="16"
             Foreground="White">
