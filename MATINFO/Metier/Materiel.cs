@@ -19,7 +19,7 @@ namespace MATINFO.Metier
         public string Nom { get; set; }
         public string Reference { get; set; }
 
-        public List<EstAttribue> EstAttribue { get; set; }
+        public List<EstAttribue> LesAttributions { get; set; }
 
         public Materiel(int idMateriel, int idCategorieMateriel, string codeBarre, string nom, string reference)
         {
@@ -28,6 +28,8 @@ namespace MATINFO.Metier
             CodeBarre = codeBarre;
             Nom = nom;
             Reference = reference;
+
+            LesAttributions = new List<EstAttribue>();
         }
 
         public Materiel() : this(1, 1, "", "", "") { }

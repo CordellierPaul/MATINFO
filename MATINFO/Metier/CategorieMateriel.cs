@@ -16,12 +16,14 @@ namespace MATINFO.Metier
         public int IDCategorieMateriel { get; set; }
         public string Nom { get; set; }
 
-        public List<Materiel> lesMateriels { get; set; }
+        public List<Materiel> LesMateriels { get; set; }
 
         public CategorieMateriel(int idCategorieMateriel, string nom)
         {
             IDCategorieMateriel = idCategorieMateriel;
             Nom = nom;
+
+            LesMateriels = new List<Materiel>();
         }
 
         public CategorieMateriel() : this(1, "") { }
@@ -66,9 +68,9 @@ namespace MATINFO.Metier
         /// <pdGenerated>default getter</pdGenerated>
         public List<Materiel> GetMateriel()
         {
-            if (lesMateriels == null)
-                lesMateriels = new List<Materiel>();
-            return lesMateriels;
+            if (LesMateriels == null)
+                LesMateriels = new List<Materiel>();
+            return LesMateriels;
         }
    
         /// <pdGenerated>default setter</pdGenerated>
@@ -84,10 +86,10 @@ namespace MATINFO.Metier
         {
             if (newMateriel == null)
                 return;
-            if (this.lesMateriels == null)
-                this.lesMateriels = new List<Materiel>();
-            if (!this.lesMateriels.Contains(newMateriel))
-                this.lesMateriels.Add(newMateriel);
+            if (this.LesMateriels == null)
+                this.LesMateriels = new List<Materiel>();
+            if (!this.LesMateriels.Contains(newMateriel))
+                this.LesMateriels.Add(newMateriel);
         }
    
         /// <pdGenerated>default Remove</pdGenerated>
@@ -95,16 +97,16 @@ namespace MATINFO.Metier
         {
             if (oldMateriel == null)
                 return;
-            if (this.lesMateriels != null)
-                if (this.lesMateriels.Contains(oldMateriel))
-                this.lesMateriels.Remove(oldMateriel);
+            if (this.LesMateriels != null)
+                if (this.LesMateriels.Contains(oldMateriel))
+                this.LesMateriels.Remove(oldMateriel);
         }
    
         /// <pdGenerated>default removeAll</pdGenerated>
         public void RemoveAllMateriel()
         {
-            if (lesMateriels != null)
-                lesMateriels.Clear();
+            if (LesMateriels != null)
+                LesMateriels.Clear();
         }
     }
 }
