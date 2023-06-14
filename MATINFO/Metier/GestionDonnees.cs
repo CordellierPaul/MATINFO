@@ -21,6 +21,16 @@ namespace MATINFO.Metier
             LesMateriels = new Materiel().FindAll();
             LePersonnel = new Personnel().FindAll();
             LesAttributions = new EstAttribue().FindAll();
+
+            // Liaison CategorieMateriel / Materiel
+            foreach (CategorieMateriel uneCategorie in LesCategories)
+            {
+                foreach (Materiel unMateriel in LesMateriels)
+                {
+                    if (uneCategorie.IDCategorieMateriel == unMateriel.IDCategorieMateriel)
+                        uneCategorie.LesMateriels.Add(unMateriel);
+                }
+            }
         }
     }
 }
