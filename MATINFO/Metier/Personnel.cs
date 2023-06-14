@@ -1,10 +1,3 @@
-/***********************************************************************
- * Module:  Personnel.cs
- * Author:  cordellp
- * Purpose: Definition of the Class Personnel
- ***********************************************************************/
-
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -50,6 +43,13 @@ namespace MATINFO.Metier
    
         public void Delete()
         {
+            // Suppression récurisve des attrinutions
+            foreach (EstAttribue uneAttribution in LesAttributions)
+            {
+                uneAttribution.Delete();
+                LesAttributions.Remove(uneAttribution);
+            }
+
             AccesDonnees accesBD = new AccesDonnees();
             string requete = "delete from personnel where idpersonnel = " + IDPersonnel + " ;";
             accesBD.SetData(requete);

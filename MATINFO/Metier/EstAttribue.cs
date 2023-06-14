@@ -1,9 +1,3 @@
-/***********************************************************************
- * Module:  EstAttribue.cs
- * Author:  cordellp
- * Purpose: Definition of the Class EstAttribue
- ***********************************************************************/
-
 using System;
 using System.Collections.ObjectModel;
 using System.Data;

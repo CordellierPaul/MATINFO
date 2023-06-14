@@ -1,10 +1,3 @@
-/***********************************************************************
- * Module:  CategorieMateriel.cs
- * Author:  cordellp
- * Purpose: Definition of the Class CategorieMateriel
- ***********************************************************************/
-
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -47,6 +40,13 @@ namespace MATINFO.Metier
    
         public void Delete()
         {
+            // Suppression récurisve du matériel
+            foreach (Materiel unMateriel in LesMateriels)
+            {
+                unMateriel.Delete();
+                LesMateriels.Remove(unMateriel);
+            }
+
             AccesDonnees accesBD = new AccesDonnees();
             string requete = "delete from categorie_materiel where idcategorie = " + IDCategorieMateriel + " ;";
             accesBD.SetData(requete);
