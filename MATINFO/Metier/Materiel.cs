@@ -21,6 +21,7 @@ namespace MATINFO.Metier
 
         public List<EstAttribue> LesAttributions { get; set; }
 
+        #region constructeurs
         public Materiel(int idMateriel, int idCategorieMateriel, string codeBarre, string nom, string reference)
         {
             IDMateriel = idMateriel;
@@ -33,7 +34,9 @@ namespace MATINFO.Metier
         }
 
         public Materiel() : this(1, 1, "", "", "") { }
+        #endregion
 
+        #region Implementation de l'interface CRUD
         public void Create()
         {
             // TODO: implement
@@ -70,5 +73,6 @@ namespace MATINFO.Metier
             }
             return leMateriel;
         }
+        #endregion
     }
 }

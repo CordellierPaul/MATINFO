@@ -32,6 +32,7 @@ namespace MATINFO.Metier
 
         public Personnel() : this(1, "", "", "") { }
 
+        #region Implementation de l'interface CRUD
         public void Create()
         {
             // TODO: implement
@@ -68,5 +69,6 @@ namespace MATINFO.Metier
             }
             return lePersonnel;
         }
+        #endregion
     }
 }

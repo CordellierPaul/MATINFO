@@ -29,7 +29,8 @@ namespace MATINFO
 
             DataContext = this;
         }
-        
+
+        #region Gesiton des évenements
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -51,5 +52,6 @@ namespace MATINFO
                 }
             }
         }
+        #endregion
     }
 }

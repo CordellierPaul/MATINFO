@@ -17,6 +17,7 @@ namespace MATINFO.Metier
         public DateTime DateAttribution { get; set; }
         public string? Commentaire { get; set; }
 
+        #region Constructeurs
         public EstAttribue(int idMateriel, int idPersonnel, DateTime dateAttribution, string? commentaire)
         {
             IDMateriel = idMateriel;
@@ -26,8 +27,9 @@ namespace MATINFO.Metier
         }
 
         public EstAttribue() : this(1, 1, DateTime.Today, "") { }
+        #endregion
 
-
+        #region Implementation de l'interface CRUD
         public void Create()
         {
             // TODO: implement
@@ -64,5 +66,6 @@ namespace MATINFO.Metier
             }
             return lesAttributions;
         }
+        #endregion
     }
 }

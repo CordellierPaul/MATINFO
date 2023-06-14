@@ -28,6 +28,8 @@ namespace MATINFO.Metier
 
         public CategorieMateriel() : this(1, "") { }
 
+
+        #region Implementation de l'interface CRUD
         public void Create()
         {
             // TODO: implement
@@ -64,6 +66,7 @@ namespace MATINFO.Metier
             }
             return lesCategories;
         }
+        #endregion
 
         /// <pdGenerated>default getter</pdGenerated>
         public List<Materiel> GetMateriel()
