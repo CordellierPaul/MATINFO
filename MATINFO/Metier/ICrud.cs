@@ -13,7 +13,7 @@ namespace MATINFO.Metier
         void Create();
         void Read();
         void Update();
-        void Delete();
+        void Delete(int idDonnee);
 
         ObservableCollection<T> FindAll();
     }

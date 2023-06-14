@@ -52,7 +52,7 @@ namespace MATINFO.Metier
             // TODO: implement
         }
    
-        public void Delete()
+        public void Delete(int idDonnee)
         {
             // TODO: implement
         }

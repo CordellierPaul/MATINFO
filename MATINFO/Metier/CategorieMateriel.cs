@@ -45,7 +45,7 @@ namespace MATINFO.Metier
             // TODO: implement
         }
    
-        public void Delete()
+        public void Delete(int idDonnee)
         {
             // TODO: implement
         }
@@ -68,6 +68,7 @@ namespace MATINFO.Metier
         }
         #endregion
 
+        #region Classes générées
         /// <pdGenerated>default getter</pdGenerated>
         public List<Materiel> GetMateriel()
         {
@@ -111,5 +112,6 @@ namespace MATINFO.Metier
             if (LesMateriels != null)
                 LesMateriels.Clear();
         }
+        #endregion
     }
 }
