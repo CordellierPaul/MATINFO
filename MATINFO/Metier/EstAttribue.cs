@@ -15,9 +15,9 @@ namespace MATINFO.Metier
         public int IDMateriel { get; set; }
         public int IDPersonnel { get; set; }
         public DateTime DateAttribution { get; set; }
-        public string Commentaire { get; set; }
+        public string? Commentaire { get; set; }
 
-        public EstAttribue(int idMateriel, int idPersonnel, DateTime dateAttribution, string commentaire)
+        public EstAttribue(int idMateriel, int idPersonnel, DateTime dateAttribution, string? commentaire)
         {
             IDMateriel = idMateriel;
             IDPersonnel = idPersonnel;
@@ -58,7 +58,7 @@ namespace MATINFO.Metier
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    EstAttribue e = new EstAttribue(int.Parse(row["idmateriel"].ToString()!), int.Parse(row["idpersonnel"].ToString()!), DateTime.Parse(row["dateattribution"].ToString()!), (string)row["commentaireattribution"]);
+                    EstAttribue e = new EstAttribue(int.Parse(row["idmateriel"].ToString()!), int.Parse(row["idpersonnel"].ToString()!), DateTime.Parse(row["dateattribution"].ToString()!), row["commentaireattribution"].ToString());
                     lesAttributions.Add(e);
                 }
             }
