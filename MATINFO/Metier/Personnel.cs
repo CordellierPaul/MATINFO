@@ -47,11 +47,7 @@ namespace MATINFO.Metier
             foreach (EstAttribue uneAttribution in LesAttributions)
                 uneAttribution.Delete();
 
-            LesAttributions.Clear();
-
-            AccesDonnees accesBD = new AccesDonnees();
-            string requete = "delete from personnel where idpersonnel = " + IDPersonnel + " ;";
-            accesBD.SetData(requete);
+            new AccesDonnees().SetData($"delete from personnel where idpersonnel = {IDPersonnel};");
         }
 
         public ObservableCollection<Personnel> FindAll()

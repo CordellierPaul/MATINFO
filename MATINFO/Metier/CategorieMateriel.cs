@@ -40,6 +40,9 @@ namespace MATINFO.Metier
    
         public void Delete()
         {
+            foreach (Materiel unMateriel in LesMateriels)
+                unMateriel.Delete();
+
             new AccesDonnees().SetData($"delete from categorie_materiel where idcategorie = {IDCategorieMateriel};");
         }
 

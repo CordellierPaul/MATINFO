@@ -40,30 +40,34 @@ namespace MATINFO.Metier
         #region Implementation de l'interface CRUD
         public void Create()
         {
-            // TODO: implement
+            AccesDonnees accesBD = new AccesDonnees();
+
+            accesBD.SetData(
+                        $"insert into materiel (idcategorie, codebarreinventaire, nommateriel, referenceconstructeurmateriel) " +
+                        $"values ({this.IDCategorieMateriel}, '{this.CodeBarre}', '{this.Nom}', '{this.Reference}');");
+
+            //DataRow row = accesBD.GetData("select idmateriel form materiel ").row;
+
+            //this.IDMateriel = int.Parse(row.ToString());
         }
    
         public void Read()
         {
             // TODO: implement
-        }
+        }()
    
         public void Update()
         {
             // TODO: implement
         }
-   
+
         public void Delete()
         {
             // Suppression récurisve des attributions
             foreach (EstAttribue uneAttribution in LesAttributions)
                 uneAttribution.Delete();
 
-            LesAttributions.Clear();
-
-            AccesDonnees accesBD = new AccesDonnees();
-            string requete = "delete from materiel where idmateriel = " + IDMateriel + " cascade;";
-            accesBD.SetData(requete);
+            new AccesDonnees().SetData($"delete from materiel where idmateriel = {IDMateriel} cascade;");
         }
 
         public ObservableCollection<Materiel> FindAll()
