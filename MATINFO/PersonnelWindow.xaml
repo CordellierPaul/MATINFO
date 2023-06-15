@@ -42,43 +42,6 @@
             <Image Source="/maisonn.png" />
         </Button>
 
-        <Button
-            x:Name="btCréer"
-            Grid.Row="1"
-            Width="77"
-            Height="48"
-            Margin="10,255,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="DarkBlue"
-            Content="Créer"
-            Foreground="White" />
-
-        <Button
-            x:Name="btModifier"
-            Grid.Row="1"
-            Width="77"
-            Height="48"
-            Margin="115,255,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="DarkBlue"
-            Content="Modifier"
-            Foreground="White" />
-
-        <Button
-            x:Name="btSupprimer"
-            Grid.Row="1"
-            Width="77"
-            Height="48"
-            Margin="216,255,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="DarkBlue"
-            Click="btSupprimer_Click"
-            Content="Supprimer"
-            Foreground="White" />
-
         <Rectangle
             Grid.Row="1"
             Height="283"
@@ -119,5 +82,131 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBlock
+            x:Name="tblAnnonceAction"
+            Grid.Row="1"
+            Margin="120,53,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Personnel"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="tblNom"
+            Grid.Row="1"
+            Margin="63,90,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Nom :"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="tboxNom"
+            Grid.Row="1"
+            Width="120"
+            Margin="106,90,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding SelectedItem.Nom, ElementName=lvPersonnel}"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="tblCodeBarre"
+            Grid.Row="1"
+            Margin="55,119,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Prénom :"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="tboxPrenom"
+            Grid.Row="1"
+            Width="120"
+            Margin="114,119,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding SelectedItem.Prenom, ElementName=lvPersonnel}"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="tblEMail"
+            Grid.Row="1"
+            Margin="51,148,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Référence :"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="tboxEMail"
+            Grid.Row="1"
+            Width="120"
+            Margin="120,147,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding SelectedItem.EMail, ElementName=lvPersonnel}"
+            TextWrapping="Wrap" />
+        <Button
+            x:Name="btValiderAjout"
+            Grid.Row="1"
+            Width="111"
+            Height="35"
+            Margin="50,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="DarkBlue"
+            Content="Valider Ajout"
+            Foreground="White" />
+        <Button
+            x:Name="btValiderModification"
+            Grid.Row="1"
+            Width="111"
+            Height="35"
+            Margin="50,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="DarkBlue"
+            Content="Valider Modification"
+            Foreground="White" />
+        <Button
+            x:Name="btAnnuler"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="172,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="DarkBlue"
+            Content="Annuler"
+            Foreground="White" />
+        <Button
+            x:Name="btAjouter"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="28,0,0,71"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="DarkBlue"
+            Content="Ajouter"
+            Foreground="White" />
+        <Button
+            x:Name="btModifier"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="111,0,0,71"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="DarkBlue"
+            Content="Modifier"
+            Foreground="White" />
+        <Button
+            x:Name="btSupprimer"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="195,0,0,71"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="DarkBlue"
+            Content="Supprimer"
+            Foreground="White" />
     </Grid>
 </Window>
