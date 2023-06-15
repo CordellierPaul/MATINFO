@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Collections.Generic;
+using System.Windows.Controls;
 using MATINFO.Metier;
 
 namespace MATINFO
@@ -15,6 +17,8 @@ namespace MATINFO
             lvCategorie.ItemsSource = donneesActuelles.LesCategories;
 
             DataContext = this;
+
+            CacherControlesAjoutModif();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -41,5 +45,56 @@ namespace MATINFO
                 lvCategorie.SelectedIndex = 0;
             }
         }
+
+        private void btAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AfficherControlesAjoutModif();
+
+            tblAnnonceAction.Text = "Ajout d'une catégorie";
+            btValider.Content = "Valider ajout";
+        }
+
+        private void btModifier_Click(object sender, RoutedEventArgs e)
+        {
+            AfficherControlesAjoutModif();
+
+            tblAnnonceAction.Text = "Modification d'une catégorie";
+            btValider.Content = "Valider modification";
+        }
+
+        private void btValider_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            CacherControlesAjoutModif();
+        }
+
+        #region Gestion affichage pour ajout/modification donnée
+
+        private void AfficherControlesAjoutModif()
+        {
+            tblAnnonceAction.Visibility = Visibility.Visible;
+            tboxNomCategorie.Visibility = Visibility.Visible;
+            tblNomCategorie.Visibility = Visibility.Visible;
+
+            btValider.Visibility = Visibility.Visible;
+            btAnnuler.Visibility = Visibility.Visible;
+        }
+
+        private void CacherControlesAjoutModif()
+        {
+            tblAnnonceAction.Visibility = Visibility.Hidden;
+            tboxNomCategorie.Visibility = Visibility.Hidden;
+            tblNomCategorie.Visibility = Visibility.Hidden;
+
+            btValider.Visibility = Visibility.Hidden;
+            btAnnuler.Visibility = Visibility.Hidden;
+        }
+
+        #endregion
+
     }
 }

@@ -21,8 +21,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-
-        <!--  En-tête  -->
+        <!--  En tête  -->
         <Border Padding="10" Background="DarkBlue" />
         <Label
             HorizontalAlignment="Center"
@@ -30,7 +29,6 @@
             Content="MATINFO"
             FontSize="20"
             Foreground="White" />
-
         <Button
             x:Name="btnHome"
             Width="50"
@@ -42,7 +40,97 @@
             <Image Source="/maisonn.png" />
         </Button>
 
+        <!--  Action ajouter/modifier  -->
+        <TextBlock
+            x:Name="tblAnnonceAction"
+            Grid.Row="1"
+            Margin="120,53,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Catégoire"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="tboxNomCategorie"
+            Grid.Row="1"
+            Width="120"
+            Margin="107,98,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding SelectedItem.Nom, ElementName=lvCategorie}"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="tblNomCategorie"
+            Grid.Row="1"
+            Margin="58,98,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Nom :"
+            TextWrapping="Wrap" />
+        <Button
+            x:Name="btValider"
+            Grid.Row="1"
+            Width="111"
+            Height="35"
+            Margin="50,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="DarkBlue"
+            Click="btValider_Click"
+            Content="Valider"
+            Foreground="White" />
+        <Button
+            x:Name="btAnnuler"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="172,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="DarkBlue"
+            Click="btAnnuler_Click"
+            Content="Annuler"
+            Foreground="White" />
 
+        <!--  Boutons ajouter/modifier  -->
+        <Button
+            x:Name="btAjouter"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="28,0,0,71"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="DarkBlue"
+            Click="btAjouter_Click"
+            Content="Ajouter"
+            Foreground="White" />
+        <Button
+            x:Name="btModifier"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="111,0,0,71"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="DarkBlue"
+            Click="btModifier_Click"
+            Content="Modifier"
+            Foreground="White" />
+        <Button
+            x:Name="btSupprimer"
+            Grid.Row="1"
+            Width="70"
+            Height="35"
+            Margin="195,0,0,71"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="DarkBlue"
+            Click="btSupprimer_Click"
+            Content="Supprimer"
+            Foreground="White" />
+
+        <!--  Action affichage données  -->
         <Rectangle
             Grid.Row="1"
             Margin="298,51,70,40"
@@ -68,63 +156,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
-        <Button
-            x:Name="btCréer"
-            Grid.Row="1"
-            Width="60"
-            Height="35"
-            Margin="28,268,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="DarkBlue"
-            Content="Créer"
-            Foreground="White" />
-
-        <Button
-            x:Name="btModifier"
-            Grid.Row="1"
-            Width="60"
-            Height="35"
-            Margin="111,0,0,71"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            Content="Modifier"
-            Foreground="White" />
-
-        <Button
-            x:Name="btSupprimer"
-            Grid.Row="1"
-            Width="60"
-            Height="35"
-            Margin="197,268,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="DarkBlue"
-            Click="btSupprimer_Click"
-            Content="Supprimer"
-            Foreground="White" />
-        <TextBlock
-            Grid.Row="1"
-            Margin="111,59,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text="Catégoire"
-            TextWrapping="Wrap" />
-        <TextBox
-            Grid.Row="1"
-            Width="120"
-            Margin="107,98,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextWrapping="Wrap" />
-        <TextBlock
-            Grid.Row="1"
-            Margin="58,98,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text="Nom :"
-            TextWrapping="Wrap" />
     </Grid>
 </Window>
