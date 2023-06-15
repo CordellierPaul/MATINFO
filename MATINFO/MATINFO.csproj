@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <None Remove="delete.png" />
-    <None Remove="espace.jpg" />
     <None Remove="maisonn.png" />
   </ItemGroup>
 
@@ -19,9 +18,6 @@
 
   <ItemGroup>
     <Resource Include="delete.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="espace.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="maisonn.png">
