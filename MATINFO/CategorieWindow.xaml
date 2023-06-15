@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <metier:GestionDonnees x:Name="donneesActuelles" />
+        <metier:GestionDonnees x:Name="donneesActuelles"/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -68,7 +68,7 @@
             Text="Nom :"
             TextWrapping="Wrap" />
         <Button
-            x:Name="btValider"
+            x:Name="btValiderAjout"
             Grid.Row="1"
             Width="111"
             Height="35"
@@ -76,8 +76,20 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="DarkBlue"
-            Click="btValider_Click"
-            Content="Valider"
+            Click="btValiderAjout_Click"
+            Content="Valider Ajout"
+            Foreground="White" />
+        <Button
+            x:Name="btValiderModification"
+            Grid.Row="1"
+            Width="111"
+            Height="35"
+            Margin="50,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="DarkBlue"
+            Click="btValiderModification_Click"
+            Content="Valider Modification"
             Foreground="White" />
         <Button
             x:Name="btAnnuler"

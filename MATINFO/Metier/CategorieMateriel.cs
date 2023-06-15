@@ -19,13 +19,13 @@ namespace MATINFO.Metier
             LesMateriels = new List<Materiel>();
         }
 
-        public CategorieMateriel() : this(1, "") { }
+        public CategorieMateriel() : this(0, "") { }
 
 
         #region Implementation de l'interface CRUD
         public void Create()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"insert into categorie_materiel (nomcategorie) values ('{this.Nom}');");
         }
    
         public void Read()
@@ -35,20 +35,12 @@ namespace MATINFO.Metier
    
         public void Update()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"update categorie_materiel set nomcategorie = '{this.Nom}' where idcategorie = {this.IDCategorieMateriel};");
         }
    
         public void Delete()
         {
-            // Suppression récurisve du matériel
-            foreach (Materiel unMateriel in LesMateriels)
-                unMateriel.Delete();
-            
-            LesMateriels.Clear();
-
-            AccesDonnees accesBD = new AccesDonnees();
-            string requete = "delete from categorie_materiel where idcategorie = " + IDCategorieMateriel + " ;";
-            accesBD.SetData(requete);
+            new AccesDonnees().SetData($"delete from categorie_materiel where idcategorie = {IDCategorieMateriel};");
         }
 
         public ObservableCollection<CategorieMateriel> FindAll()

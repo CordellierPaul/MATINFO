@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 using MATINFO.Metier;
 using Microsoft.Win32;
 
@@ -13,15 +16,13 @@ namespace MATINFO
         public CategorieWindow()
         {
             InitializeComponent();
-
-            lvCategorie.ItemsSource = donneesActuelles.LesCategories;
-
-            DataContext = this;
-
             CacherControlesAjoutModif();
+            lvCategorie.ItemsSource = donneesActuelles.LesCategories;
+            
+            DataContext = this;
         }
         #endregion
-
+        
         #region evenements clicks boutons
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
@@ -42,6 +43,7 @@ namespace MATINFO
 
             if (result == MessageBoxResult.Yes && lvCategorie.SelectedItem is CategorieMateriel categorie)
             {
+                ((CategorieMateriel)lvCategorie.SelectedItem).LesMateriels.Clear();
                 categorie.Delete();
 
                 donneesActuelles.LesCategories.Remove(categorie);
@@ -53,10 +55,10 @@ namespace MATINFO
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
+            btValiderAjout.Visibility = Visibility.Visible;
+
 
             tblAnnonceAction.Text = "Ajout d'une catégorie";
-            btValider.Content = "Valider ajout";
-
             lvCategorie.SelectedItem = null;
             lvCategorie.IsEnabled = false;
         }
@@ -64,16 +66,35 @@ namespace MATINFO
         private void btModifier_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
+            btValiderModification.Visibility = Visibility.Visible;
+
 
             tblAnnonceAction.Text = "Modification d'une catégorie";
-            btValider.Content = "Valider modification";
             lvCategorie.IsEnabled = true;
         }
 
-        private void btValider_Click(object sender, RoutedEventArgs e)
+        private void btValiderAjout_Click(object sender, RoutedEventArgs e)
         {
+            new CategorieMateriel(0, tboxNomCategorie.Text).Create();
+
             CacherControlesAjoutModif();
             lvCategorie.IsEnabled = true;
+
+            donneesActuelles.Refresh();
+
+            lvCategorie.ItemsSource = donneesActuelles.LesCategories;
+        }
+        private void btValiderModification_Click(object sender, RoutedEventArgs e)
+        {
+            ((CategorieMateriel)lvCategorie.SelectedItem).Nom = tboxNomCategorie.Text;
+            ((CategorieMateriel)lvCategorie.SelectedItem).Update();
+
+            CacherControlesAjoutModif();
+            lvCategorie.IsEnabled = true;
+
+            donneesActuelles.Refresh();
+
+            lvCategorie.ItemsSource = donneesActuelles.LesCategories;
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
@@ -91,7 +112,6 @@ namespace MATINFO
             tboxNomCategorie.Visibility = Visibility.Visible;
             tblNomCategorie.Visibility = Visibility.Visible;
 
-            btValider.Visibility = Visibility.Visible;
             btAnnuler.Visibility = Visibility.Visible;
         }
 
@@ -101,7 +121,8 @@ namespace MATINFO
             tboxNomCategorie.Visibility = Visibility.Hidden;
             tblNomCategorie.Visibility = Visibility.Hidden;
 
-            btValider.Visibility = Visibility.Hidden;
+            btValiderAjout.Visibility = Visibility.Hidden;
+            btValiderModification.Visibility = Visibility.Hidden;
             btAnnuler.Visibility = Visibility.Hidden;
         }
 

@@ -20,6 +20,11 @@ namespace MATINFO.Metier
         #region Constructeur
         public GestionDonnees()
         {
+            Refresh();
+        }
+        #endregion
+        public void Refresh()
+        {
             LesCategories = new CategorieMateriel().FindAll();
             LesMateriels = new Materiel().FindAll();
             LePersonnel = new Personnel().FindAll();
@@ -61,6 +66,5 @@ namespace MATINFO.Metier
                 }
             }
         }
-        #endregion
     }
 }
