@@ -30,6 +30,8 @@ namespace MATINFO
 
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
+            lvCategorie.IsEnabled = true;
+
             if (lvCategorie.SelectedItem == null)
                 return;
 
@@ -52,6 +54,9 @@ namespace MATINFO
 
             tblAnnonceAction.Text = "Ajout d'une catégorie";
             btValider.Content = "Valider ajout";
+
+            lvCategorie.SelectedItem = null;
+            lvCategorie.IsEnabled = false;
         }
 
         private void btModifier_Click(object sender, RoutedEventArgs e)
@@ -60,16 +65,18 @@ namespace MATINFO
 
             tblAnnonceAction.Text = "Modification d'une catégorie";
             btValider.Content = "Valider modification";
+            lvCategorie.IsEnabled = true;
         }
 
         private void btValider_Click(object sender, RoutedEventArgs e)
         {
-
+            lvCategorie.IsEnabled = true;
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             CacherControlesAjoutModif();
+            lvCategorie.IsEnabled = true;
         }
 
         #region Gestion affichage pour ajout/modification donnée
