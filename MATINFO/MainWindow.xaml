@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <!--  En-tête  -->
-        <Border Padding="10" Background="#FF0D044C" />
+        <Border Padding="10" Background="DarkBlue" />
         <Label
             HorizontalAlignment="Center"
             VerticalAlignment="Center"

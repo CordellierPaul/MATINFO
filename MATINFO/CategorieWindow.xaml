@@ -23,7 +23,7 @@
 
 
         <!--  En-tête  -->
-        <Border Padding="10" Background="#FF0D044C" />
+        <Border Padding="10" Background="DarkBlue" />
         <Label
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -77,15 +77,9 @@
             Margin="28,268,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="DarkBlue"
             Content="Créer"
-            Foreground="White">
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FF3561CC" />
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+            Foreground="White" />
 
         <Button
             x:Name="btModifier"
@@ -95,15 +89,9 @@
             Margin="111,0,0,71"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
+            Background="DarkBlue"
             Content="Modifier"
-            Foreground="White">
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FF3561CC" />
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+            Foreground="White" />
 
         <Button
             x:Name="btSupprimer"
@@ -113,16 +101,10 @@
             Margin="197,268,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="DarkBlue"
             Click="btSupprimer_Click"
             Content="Supprimer"
-            Foreground="White">
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FF3561CC" />
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+            Foreground="White" />
         <TextBlock
             Grid.Row="1"
             Margin="111,59,0,0"
