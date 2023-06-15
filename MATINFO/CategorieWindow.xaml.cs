@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using MATINFO.Metier;
+using Microsoft.Win32;
 
 namespace MATINFO
 {
@@ -8,6 +9,7 @@ namespace MATINFO
     /// </summary>
     public partial class CategorieWindow : Window
     {
+        #region Constructeur
         public CategorieWindow()
         {
             InitializeComponent();
@@ -18,7 +20,9 @@ namespace MATINFO
 
             CacherControlesAjoutModif();
         }
+        #endregion
 
+        #region evenements clicks boutons
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -68,6 +72,7 @@ namespace MATINFO
 
         private void btValider_Click(object sender, RoutedEventArgs e)
         {
+            CacherControlesAjoutModif();
             lvCategorie.IsEnabled = true;
         }
 
@@ -76,6 +81,7 @@ namespace MATINFO
             CacherControlesAjoutModif();
             lvCategorie.IsEnabled = true;
         }
+        #endregion
 
         #region Gestion affichage pour ajout/modification donnée
 

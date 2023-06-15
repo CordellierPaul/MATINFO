@@ -49,8 +49,8 @@
             Stroke="Black" />
         <Label
             Grid.Row="1"
-            Margin="572,33,0,0"
-            HorizontalAlignment="Left"
+            Margin="543,33,304,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Background="White"
             Content="Attribution"

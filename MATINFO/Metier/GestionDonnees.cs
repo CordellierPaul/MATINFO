@@ -10,11 +10,14 @@ namespace MATINFO.Metier
 {
     public class GestionDonnees
     {
+        #region declaration de variables
         public ObservableCollection<CategorieMateriel> LesCategories { get; set; }
         public ObservableCollection<Materiel> LesMateriels { get; set; }
         public ObservableCollection<Personnel> LePersonnel { get; set; }
         public ObservableCollection<EstAttribue> LesAttributions { get; set; }
+        #endregion
 
+        #region Constructeur
         public GestionDonnees()
         {
             LesCategories = new CategorieMateriel().FindAll();
@@ -58,5 +61,6 @@ namespace MATINFO.Metier
                 }
             }
         }
+        #endregion
     }
 }

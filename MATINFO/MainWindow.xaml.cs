@@ -19,6 +19,7 @@ namespace MATINFO
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Constructeur
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +33,11 @@ namespace MATINFO
 
             DataContext = this;
         }
+        #endregion
 
+        #region Evenements
+
+        #region Clicks boutons
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -57,7 +62,38 @@ namespace MATINFO
                 lvAttribution.SelectedIndex = 0;
             }
         }
+        private void btCategorieWindow_Click(object sender, RoutedEventArgs e)
+        {
+            CategorieWindow categorieWindow = new CategorieWindow();
+            Close();
+            categorieWindow.Show();
+        }
 
+        private void btMaterielWindow_Click(object sender, RoutedEventArgs e)
+        {
+            MaterielWindow materielWindow = new MaterielWindow();
+            Close();
+            materielWindow.Show();
+        }
+
+        private void btPersonnelWindow_Click(object sender, RoutedEventArgs e)
+        {
+            PersonnelWindow personnelWindow = new PersonnelWindow();
+            Close();
+            personnelWindow.Show();
+        }
+        #endregion
+
+        #region Selection change
+        private void lvMaterielPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
+        }
+        #endregion
+
+        #endregion
+
+        #region filtres
         // Si cette fonction renvoie true, l'attribution est affichée.
         private bool FiltreAttribution(object item)
         {
@@ -95,31 +131,7 @@ namespace MATINFO
 
             return true;
         }
+        #endregion
 
-        private void lvMaterielPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
-        }
-
-        private void btCategorieWindow_Click(object sender, RoutedEventArgs e)
-        {
-            CategorieWindow categorieWindow = new CategorieWindow();
-            Close();
-            categorieWindow.Show();
-        }
-
-        private void btMaterielWindow_Click(object sender, RoutedEventArgs e)
-        {
-            MaterielWindow materielWindow = new MaterielWindow();
-            Close();
-            materielWindow.Show();
-        }
-
-        private void btPersonnelWindow_Click(object sender, RoutedEventArgs e)
-        {
-            PersonnelWindow personnelWindow = new PersonnelWindow();
-            Close();
-            personnelWindow.Show();
-        }
     }
 }

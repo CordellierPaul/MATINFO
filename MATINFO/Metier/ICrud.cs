@@ -10,10 +10,12 @@ namespace MATINFO.Metier
 {
     public interface ICrud<T>
     {
+        #region CRUD classique
         void Create();
         void Read();
         void Update();
         void Delete();
+        #endregion
 
         ObservableCollection<T> FindAll();
     }
