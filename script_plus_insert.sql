@@ -154,13 +154,17 @@ insert into MATERIEL (IDCATEGORIE, NOMMATERIEL, REFERENCECONSTRUCTEURMATERIEL, C
 insert into EST_ATTRIBUE (IDMATERIEL, IDPERSONNEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION) values
 	(2, 3, '2023-06-14', 'PC connecter au VP de la salle'),
 	(12, 2, '2023-06-15', 'Pour tester une application mobile'),
-	(8, 4, '2023-06-17', 'Cable ethernet tombé en panne');
+	(8, 4, '2023-06-17', 'Cable ethernet tombé en panne'),
+	(1, 2, '2023-06-17', 'Un port USB est dysfonctionnel');
 
 insert into EST_ATTRIBUE (IDMATERIEL, IDPERSONNEL, DATEATTRIBUTION) values
 	(1, 1, '2023-06-18'),
 	(5, 2, '2023-06-18'),
 	(8, 1, '2023-06-19'),
-	(8, 5, '2023-06-18');
+	(8, 5, '2023-06-18'),
+	(1, 2, '2023-06-20'),
+	(1, 4, '2023-06-24'),
+	(2, 1, '2023-06-28');
 	
 
 select nompersonnel, prenompersonnel, emailpersonnel, 'est attribue a' as "est attribue a", nommateriel, nomcategorie, 'le' as "le", dateattribution
