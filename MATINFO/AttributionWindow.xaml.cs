@@ -95,5 +95,10 @@ namespace MATINFO
 
             return true;
         }
+
+        private void lvMaterielPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
+        }
     }
 }
