@@ -51,10 +51,10 @@ namespace MATINFO.Metier
    
         public void Update()
         {
-            new AccesDonnees().SetData($"update categorie_materiel set idcategorie = {this.IDCategorieMateriel}," +
-                                                                     $"codebarreinventaire = '{this.CodeBarre}'," +
-                                                                     $"nommateriel = '{this.Nom}'" +
-                                                                     $"referenceconstructeurmateriel = '{this.Reference}'" +
+            new AccesDonnees().SetData($"update materiel set idcategorie = {this.IDCategorieMateriel}," +
+                                                           $"codebarreinventaire = '{this.CodeBarre}'," +
+                                                           $"nommateriel = '{this.Nom}'" +
+                                                           $"referenceconstructeurmateriel = '{this.Reference}'" +
                                        $"where idmateriel = {this.IDMateriel};");
         }
 

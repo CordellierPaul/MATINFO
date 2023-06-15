@@ -33,7 +33,8 @@ namespace MATINFO.Metier
         #region Implementation de l'interface CRUD
         public void Create()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"insert into est_attribue (idmateriel, idpersonnel, dateattribution, commentaireattribution) " +
+                                       $"values ({this.IDMateriel}, {this.IDPersonnel}, '{this.DateAttribution}', '{this.Commentaire}')");
         }
    
         public void Read()
@@ -43,7 +44,9 @@ namespace MATINFO.Metier
    
         public void Update()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"update est_attribue set dateattribution = '{this.DateAttribution}'," +
+                                                               $"commentaireattribution = '{this.Commentaire}'," +
+                                       $"where idmateriel = {this.IDMateriel} and idpersonnel = {this.IDMateriel};");
         }
    
         public void Delete()

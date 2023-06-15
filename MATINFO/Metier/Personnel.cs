@@ -28,7 +28,8 @@ namespace MATINFO.Metier
         #region Implementation de l'interface CRUD
         public void Create()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"insert into personnel (nompersonnel, prenompersonnel, emailpersonnel) " +
+                                       $"values ('{this.Nom}', '{this.Prenom}', '{this.EMail}')");
         }
    
         public void Read()
@@ -38,7 +39,10 @@ namespace MATINFO.Metier
    
         public void Update()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"update personnel set nompersonnel = '{this.Nom}'," +
+                                                            $"prenompersonnel = '{this.Prenom}'," +
+                                                            $"emailpersonnel = '{this.EMail}'" +
+                                       $"where idpersonnel = {this.IDPersonnel};");
         }
    
         public void Delete()
