@@ -27,11 +27,8 @@ namespace MATINFO
             lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
 
-            if (donneesActuelles.LesAttributions != null)   // Si la liste lesAttribution est ivde, 
-            {
-                CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource);
-                view.Filter = FiltreAttribution;
-            }
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource);
+            view.Filter = FiltreAttribution;
 
             DataContext = this;
         }
