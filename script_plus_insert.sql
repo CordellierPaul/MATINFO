@@ -125,7 +125,7 @@ alter table MATERIEL
 
 
 insert into CATEGORIE_MATERIEL (NOMCATEGORIE) Values
-	('PC Pixe'),
+	('PC Fixe'),
 	('PC Portable'),
 	('Tablette');
 	
