@@ -15,7 +15,7 @@ namespace MATINFO.Metier
     {
         public int IDMateriel { get; set; }
         public int IDCategorieMateriel { get; set; }
-        public CategorieMateriel UneCategorieMateriel { get; set; }
+        public CategorieMateriel? UneCategorieMateriel { get; set; }
         public string CodeBarre { get; set; }
         public string Nom { get; set; }
         public string Reference { get; set; }
@@ -40,25 +40,22 @@ namespace MATINFO.Metier
         #region Implementation de l'interface CRUD
         public void Create()
         {
-            AccesDonnees accesBD = new AccesDonnees();
-
-            accesBD.SetData(
-                        $"insert into materiel (idcategorie, codebarreinventaire, nommateriel, referenceconstructeurmateriel) " +
-                        $"values ({this.IDCategorieMateriel}, '{this.CodeBarre}', '{this.Nom}', '{this.Reference}');");
-
-            //DataRow row = accesBD.GetData("select idmateriel form materiel ").row;
-
-            //this.IDMateriel = int.Parse(row.ToString());
+            new AccesDonnees().SetData($"insert into materiel (idcategorie, codebarreinventaire, nommateriel, referenceconstructeurmateriel) " +
+                                       $"values ({this.IDCategorieMateriel}, '{this.CodeBarre}', '{this.Nom}', '{this.Reference}')");
         }
    
         public void Read()
         {
             // TODO: implement
-        }()
+        }
    
         public void Update()
         {
-            // TODO: implement
+            new AccesDonnees().SetData($"update categorie_materiel set idcategorie = {this.IDCategorieMateriel}," +
+                                                                     $"codebarreinventaire = '{this.CodeBarre}'," +
+                                                                     $"nommateriel = '{this.Nom}'" +
+                                                                     $"referenceconstructeurmateriel = '{this.Reference}'" +
+                                       $"where idmateriel = {this.IDMateriel};");
         }
 
         public void Delete()
