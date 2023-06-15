@@ -186,13 +186,8 @@
             Click="btCategorieWindow_Click"
             Content="Catégories du matériel"
             FontSize="16"
-            Foreground="White">
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FF3561CC" />
-                </LinearGradientBrush>
-            </Button.Background>
+            Foreground="White"
+            Background="DarkBlue">
         </Button>
         <Button
             x:Name="btMaterielWindow"
@@ -206,13 +201,8 @@
             Click="btMaterielWindow_Click"
             Content="Matériel"
             FontSize="16"
-            Foreground="White">
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FF3561CC" />
-                </LinearGradientBrush>
-            </Button.Background>
+            Foreground="White"
+            Background="DarkBlue">
         </Button>
         <Button
             x:Name="btPersonnelWindow"
