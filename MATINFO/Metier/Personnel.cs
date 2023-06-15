@@ -39,9 +39,9 @@ namespace MATINFO.Metier
    
         public void Update()
         {
-            new AccesDonnees().SetData($"update personnel set nompersonnel = '{this.Nom}'," +
-                                                            $"prenompersonnel = '{this.Prenom}'," +
-                                                            $"emailpersonnel = '{this.EMail}'" +
+            new AccesDonnees().SetData($"update personnel set nompersonnel = '{this.Nom}', " +
+                                                            $"prenompersonnel = '{this.Prenom}', " +
+                                                            $"emailpersonnel = '{this.EMail}' " +
                                        $"where idpersonnel = {this.IDPersonnel};");
         }
    
