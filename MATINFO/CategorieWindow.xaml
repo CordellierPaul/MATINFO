@@ -64,10 +64,7 @@
             ItemsSource="{Binding LesCategories}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn
-                        Width="auto"
-                        DisplayMemberBinding="{Binding Nom}"
-                        Header="Nom" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -75,9 +72,9 @@
         <Button
             x:Name="btCréer"
             Grid.Row="1"
-            Width="77"
-            Height="48"
-            Margin="10,255,0,0"
+            Width="60"
+            Height="35"
+            Margin="28,268,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Créer"
@@ -93,11 +90,11 @@
         <Button
             x:Name="btModifier"
             Grid.Row="1"
-            Width="77"
-            Height="48"
-            Margin="115,255,0,0"
+            Width="60"
+            Height="35"
+            Margin="111,0,0,71"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Bottom"
             Content="Modifier"
             Foreground="White">
             <Button.Background>
@@ -111,9 +108,9 @@
         <Button
             x:Name="btSupprimer"
             Grid.Row="1"
-            Width="77"
-            Height="48"
-            Margin="216,255,0,0"
+            Width="60"
+            Height="35"
+            Margin="197,268,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btSupprimer_Click"
@@ -126,5 +123,26 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <TextBlock
+            Grid.Row="1"
+            Margin="111,59,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Catégoire"
+            TextWrapping="Wrap" />
+        <TextBox
+            Grid.Row="1"
+            Width="120"
+            Margin="107,98,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBlock
+            Grid.Row="1"
+            Margin="58,98,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Nom :"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>
