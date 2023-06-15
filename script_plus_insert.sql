@@ -3,13 +3,13 @@
 /* Date de création :  06/12/2022 16:19:40                      */
 /*==============================================================*/
 
-drop table if exists CATEGORIE_MATERIEL;
+drop table if exists CATEGORIE_MATERIEL cascade;
 
-drop table if exists EST_ATTRIBUE;
+drop table if exists EST_ATTRIBUE cascade;
 
-drop table if exists MATERIEL;
+drop table if exists MATERIEL cascade;
 
-drop table if exists PERSONNEL;
+drop table if exists PERSONNEL cascade;
 
 /*==============================================================*/
 /* Table : CATEGORIE_MATERIEL                                   */
