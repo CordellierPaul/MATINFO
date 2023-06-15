@@ -28,7 +28,10 @@ namespace MATINFO.Metier
                 foreach (Materiel unMateriel in LesMateriels)
                 {
                     if (uneCategorie.IDCategorieMateriel == unMateriel.IDCategorieMateriel)
+                    {
                         uneCategorie.LesMateriels.Add(unMateriel);
+                        unMateriel.UneCategorieMateriel = uneCategorie;
+                    }
                 }
             }
 
@@ -38,14 +41,20 @@ namespace MATINFO.Metier
                 foreach (Materiel unMateriel in LesMateriels)
                 {
                     if (uneAttribution.IDMateriel == unMateriel.IDMateriel)
+                    {
                         unMateriel.LesAttributions.Add(uneAttribution);
+                        uneAttribution.UnMateriel = unMateriel;
+                    }
                 }
 
                 // Liaison Personnel / Attribution
                 foreach (Personnel unPersonnel in LePersonnel)
                 {
                     if (uneAttribution.IDPersonnel == unPersonnel.IDPersonnel)
+                    {
                         unPersonnel.LesAttributions.Add(uneAttribution);
+                        uneAttribution.UnPersonnel = unPersonnel;
+                    }
                 }
             }
         }

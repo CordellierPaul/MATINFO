@@ -1,13 +1,18 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Linq;
+using System.Security.Permissions;
+using System.Windows.Documents;
 
 namespace MATINFO.Metier
 {
     public class EstAttribue : ICrud<EstAttribue>
     {
         public int IDMateriel { get; set; }
+        public Materiel UnMateriel { get; set; }
         public int IDPersonnel { get; set; }
+        public Personnel UnPersonnel { get; set; }
         public string DateAttribution { get; set; }
         public string? Commentaire { get; set; }
 

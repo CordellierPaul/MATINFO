@@ -130,12 +130,12 @@ insert into CATEGORIE_MATERIEL (NOMCATEGORIE) Values
 	('Tablette');
 	
 insert into PERSONNEL (EMAILPERSONNEL, NOMPERSONNEL, PRENOMPERSONNEL) values
-	('grugru@etu.univ-smb.fr', 'GRUSON', 'Nathalie'),
-	('bdiard@etu.univ-smb.fr', 'DIARD', 'Benoit'),
-	('meger@etu.univ-smb.fr', 'MEGER', 'Nicolas'),
-	('yoann@etu.univ-smb.fr', 'GAILLARD', 'Yoann'),
-	('vcout@etu.univ_smb.fr', 'COUTURIER', 'Vincent');
-	
+	('grugru@univ-smb.fr', 'GRUSON', 'Nathalie'),
+	('bdiard@univ-smb.fr', 'DIARD', 'Benoit'),
+	('meger@univ-smb.fr', 'MEGER', 'Nicolas'),
+	('yoann@univ-smb.fr', 'GAILLARD', 'Yoann'),
+	('vcout@univ_smb.fr', 'COUTURIER', 'Vincent');
+
 insert into MATERIEL (IDCATEGORIE, NOMMATERIEL, REFERENCECONSTRUCTEURMATERIEL, CODEBARREINVENTAIRE) values
 	(1, 'Poste 1 Salle D361', '1351624354', '31343sdth135t2dghgh'),
 	(1, 'Poste 2 Salle D361', '1351624354', 'q5654g3dgs3t6'),

@@ -15,6 +15,7 @@ namespace MATINFO.Metier
     {
         public int IDMateriel { get; set; }
         public int IDCategorieMateriel { get; set; }
+        public CategorieMateriel UneCategorieMateriel { get; set; }
         public string CodeBarre { get; set; }
         public string Nom { get; set; }
         public string Reference { get; set; }
@@ -61,7 +62,7 @@ namespace MATINFO.Metier
             LesAttributions.Clear();
 
             AccesDonnees accesBD = new AccesDonnees();
-            string requete = "delete from materiel where idmateriel = " + IDMateriel + " ;";
+            string requete = "delete from materiel where idmateriel = " + IDMateriel + " cascade;";
             accesBD.SetData(requete);
         }
 

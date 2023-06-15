@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:metier="clr-namespace:MATINFO.Metier"
     Title="Attributions"
-    MinWidth="800"
-    MinHeight="450"
+    MinWidth="1500"
+    MinHeight="500"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -45,7 +45,7 @@
 
         <Rectangle
             Grid.Row="1"
-            Margin="298,51,37,40"
+            Margin="298,51,37,80"
             Stroke="Black" />
         <Label
             Grid.Row="1"
@@ -82,11 +82,9 @@
         <ListView
             x:Name="lvMateriel"
             Grid.Row="1"
-            Width="187"
-            Margin="325,81,0,71"
-            HorizontalAlignment="Left"
+            Margin="325,81,0,110"
             ItemsSource="{Binding LesMateriels}"
-            SelectionChanged="lvMaterielPersonnel_SelectionChanged">
+            SelectionChanged="lvMaterielPersonnel_SelectionChanged" HorizontalAlignment="Left" Width="189">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
@@ -96,10 +94,18 @@
         <ListView
             x:Name="lvAttribution"
             Grid.Row="1"
-            Margin="543,81,304,71"
+            Margin="543,81,304,110"
             ItemsSource="{Binding LesAttributions}">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn
+                        Width="auto"
+                        DisplayMemberBinding="{Binding UnPersonnel.Nom}"
+                        Header="Nom" />
+                    <GridViewColumn
+                        Width="auto"
+                        DisplayMemberBinding="{Binding UnPersonnel.Prenom}"
+                        Header="Prenom" />
                     <GridViewColumn
                         Width="auto"
                         DisplayMemberBinding="{Binding DateAttribution}"
@@ -108,14 +114,19 @@
                         Width="auto"
                         DisplayMemberBinding="{Binding Commentaire}"
                         Header="Commentaire" />
+                    <GridViewColumn
+                        Width="auto"
+                        DisplayMemberBinding="{Binding UnMateriel.Nom}"
+                        Header="Materiel" />
                 </GridView>
+
             </ListView.View>
         </ListView>
         <ListView
             x:Name="lvPersonnel"
             Grid.Row="1"
             Width="209"
-            Margin="0,81,65,71"
+            Margin="0,81,65,110"
             HorizontalAlignment="Right"
             ItemsSource="{Binding LePersonnel}"
             SelectionChanged="lvMaterielPersonnel_SelectionChanged">
@@ -132,9 +143,9 @@
             Grid.Row="1"
             Width="77"
             Height="48"
-            Margin="10,255,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="325,0,304,20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
             Background="DarkBlue"
             Content="Créer"
             Foreground="White" />
@@ -144,9 +155,9 @@
             Grid.Row="1"
             Width="77"
             Height="48"
-            Margin="115,255,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="543,0,304,20"
+            HorizontalAlignment="center"
+            VerticalAlignment="Bottom"
             Background="DarkBlue"
             Content="Modifier"
             Foreground="White" />
@@ -156,9 +167,9 @@
             Grid.Row="1"
             Width="77"
             Height="48"
-            Margin="216,255,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="543,0,65,20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="bottom"
             Background="DarkBlue"
             Click="btSupprimer_Click"
             Content="Supprimer"
@@ -168,7 +179,7 @@
             Grid.Row="1"
             Width="185"
             Height="30"
-            Margin="260,0,0,22"
+            Margin="50,0,0,22"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             BorderBrush="White"
@@ -188,12 +199,12 @@
             Grid.Row="1"
             Width="165"
             Height="30"
-            Margin="518,0,0,22"
-            HorizontalAlignment="Left"
+            Margin="325,0,920,22"
+            HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             BorderBrush="White"
             Click="btMaterielWindow_Click"
-            Content="Matériels"
+            Content="Matériel"
             FontSize="16"
             Foreground="White">
             <Button.Background>
@@ -208,8 +219,8 @@
             Grid.Row="1"
             Width="166"
             Height="30"
-            Margin="765,0,0,22"
-            HorizontalAlignment="Left"
+            Margin="0,0,75,22"
+            HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             BorderBrush="White"
             Click="btPersonnelWindow_Click"

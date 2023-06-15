@@ -105,6 +105,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
+                    <GridViewColumn DisplayMemberBinding="{Binding UneCategorieMateriel.Nom}" Header="Categorie" />
                     <GridViewColumn DisplayMemberBinding="{Binding CodeBarre}" Header="Code barre" />
                     <GridViewColumn DisplayMemberBinding="{Binding Reference}" Header="Référence du constructeur" />
                 </GridView>
