@@ -45,9 +45,7 @@
 
         <Rectangle
             Grid.Row="1"
-            Height="283"
-            Margin="298,51,70,0"
-            VerticalAlignment="Top"
+            Margin="298,51,70,40"
             Stroke="Black" />
         <Label
             Grid.Row="1"
@@ -62,9 +60,7 @@
         <ListView
             x:Name="lvCategorie"
             Grid.Row="1"
-            Height="222"
-            Margin="338,81,111,0"
-            VerticalAlignment="Top"
+            Margin="338,81,111,71"
             ItemsSource="{Binding LesCategories}">
             <ListView.View>
                 <GridView>
