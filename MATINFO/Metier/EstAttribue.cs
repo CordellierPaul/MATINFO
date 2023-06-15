@@ -8,11 +8,11 @@ namespace MATINFO.Metier
     {
         public int IDMateriel { get; set; }
         public int IDPersonnel { get; set; }
-        public DateTime DateAttribution { get; set; }
+        public string DateAttribution { get; set; }
         public string? Commentaire { get; set; }
 
         #region Constructeurs
-        public EstAttribue(int idMateriel, int idPersonnel, DateTime dateAttribution, string? commentaire)
+        public EstAttribue(int idMateriel, int idPersonnel, string dateAttribution, string? commentaire)
         {
             IDMateriel = idMateriel;
             IDPersonnel = idPersonnel;
@@ -20,7 +20,7 @@ namespace MATINFO.Metier
             Commentaire = commentaire;
         }
 
-        public EstAttribue() : this(1, 1, DateTime.Today, "") { }
+        public EstAttribue() : this(1, 1, DateTime.Today.ToShortDateString(), "") { }
         #endregion
 
         #region Implementation de l'interface CRUD
@@ -56,7 +56,7 @@ namespace MATINFO.Metier
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    EstAttribue e = new EstAttribue(int.Parse(row["idmateriel"].ToString()!), int.Parse(row["idpersonnel"].ToString()!), DateTime.Parse(row["dateattribution"].ToString()!), row["commentaireattribution"].ToString());
+                    EstAttribue e = new EstAttribue(int.Parse(row["idmateriel"].ToString()!), int.Parse(row["idpersonnel"].ToString()!), DateTime.Parse(row["dateattribution"].ToString()!).ToShortDateString(), row["commentaireattribution"].ToString());
                     lesAttributions.Add(e);
                 }
             }
