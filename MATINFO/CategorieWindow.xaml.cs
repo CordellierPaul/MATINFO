@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using System.Collections.Generic;
-using System.Windows.Controls;
 using MATINFO.Metier;
 
 namespace MATINFO
