@@ -151,9 +151,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="DarkBlue"
+            Click="btValiderAjout_Click"
             Content="Valider Ajout"
-            Foreground="White"
-            Click="btValiderAjout_Click"/>
+            Foreground="White" />
         <Button
             x:Name="btValiderModification"
             Grid.Row="1"
@@ -163,9 +163,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="DarkBlue"
+            Click="btValiderModification_Click"
             Content="Valider Modification"
-            Foreground="White"
-            Click="btValiderModification_Click"/>
+            Foreground="White" />
         <Button
             x:Name="btAnnuler"
             Grid.Row="1"
@@ -186,8 +186,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            Click="btAjouter_Click"
             Content="Ajouter"
-            Foreground="White" Click="btAjouter_Click" />
+            Foreground="White" />
         <Button
             x:Name="btModifier"
             Grid.Row="1"
@@ -197,8 +198,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            Click="btModifier_Click"
             Content="Modifier"
-            Foreground="White" Click="btModifier_Click" />
+            Foreground="White" />
         <Button
             x:Name="btSupprimer"
             Grid.Row="1"
@@ -208,6 +210,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            Click="btSupprimer_Click"
             Content="Supprimer"
             Foreground="White" />
     </Grid>

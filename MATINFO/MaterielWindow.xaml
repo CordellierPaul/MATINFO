@@ -143,8 +143,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="DarkBlue"
+            Click="btValiderAjout_Click"
             Content="Valider Ajout"
-            Foreground="White" Click="btValiderAjout_Click" />
+            Foreground="White" />
         <Button
             x:Name="btValiderModification"
             Grid.Row="1"
@@ -154,8 +155,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="DarkBlue"
+            Click="btValiderModification_Click"
             Content="Valider Modification"
-            Foreground="White" Click="btValiderModification_Click" />
+            Foreground="White" />
         <Button
             x:Name="btAnnuler"
             Grid.Row="1"
@@ -165,8 +167,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="DarkBlue"
+            Click="btAnnuler_Click"
             Content="Annuler"
-            Foreground="White" Click="btAnnuler_Click" />
+            Foreground="White" />
         <Button
             x:Name="btAjouter"
             Grid.Row="1"
@@ -176,8 +179,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            Click="btAjouter_Click"
             Content="Ajouter"
-            Foreground="White" Click="btAjouter_Click" />
+            Foreground="White" />
         <Button
             x:Name="btModifier"
             Grid.Row="1"
@@ -187,8 +191,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            Click="btModifier_Click"
             Content="Modifier"
-            Foreground="White" Click="btModifier_Click" />
+            Foreground="White" />
         <Button
             x:Name="btSupprimer"
             Grid.Row="1"
@@ -198,6 +203,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            Click="btSupprimer_Click"
             Content="Supprimer"
             Foreground="White" />
         <TextBlock
@@ -208,6 +214,13 @@
             VerticalAlignment="Top"
             Text="Catégorie :"
             TextWrapping="Wrap" />
-        <ComboBox x:Name="cbCategorie"  HorizontalAlignment="Left" Margin="117,171,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
+        <ComboBox
+            x:Name="cbCategorie"
+            Grid.Row="1"
+            Width="120"
+            Margin="117,171,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            SelectedIndex="0" />
     </Grid>
 </Window>
