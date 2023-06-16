@@ -100,6 +100,9 @@ namespace MATINFO
         {
             CollectionViewSource.GetDefaultView(lvMateriel.ItemsSource).Refresh();
             CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
+
+            if (lvMateriel.SelectedItem == null)
+                lvMateriel.SelectAll();
         }
         #endregion
 
