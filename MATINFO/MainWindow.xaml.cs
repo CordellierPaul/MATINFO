@@ -26,6 +26,7 @@ namespace MATINFO
 
             new AccesDonnees().OpenConnection();
 
+            lvCategorie.ItemsSource = donneesActuelles.LesCategories;
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
             lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
