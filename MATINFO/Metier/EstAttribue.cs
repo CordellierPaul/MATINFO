@@ -45,7 +45,7 @@ namespace MATINFO.Metier
         public void Update()
         {
             new AccesDonnees().SetData($"update est_attribue set dateattribution = '{this.DateAttribution}', " +
-                                                               $"commentaireattribution = '{this.Commentaire}' " +
+                                       $"commentaireattribution = '{this.Commentaire}' " +
                                        $"where idmateriel = {this.IDMateriel} and idpersonnel = {this.IDMateriel};");
         }
    

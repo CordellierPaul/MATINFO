@@ -77,7 +77,7 @@
                         Header="Prenom" />
                     <GridViewColumn
                         Width="150"
-                        DisplayMemberBinding="{Binding EMail}"
+                        DisplayMemberBinding="{Binding Email}"
                         Header="E-mail" />
                 </GridView>
             </ListView.View>
@@ -94,7 +94,7 @@
         <TextBlock
             x:Name="tblNom"
             Grid.Row="1"
-            Margin="63,90,0,0"
+            Margin="70,90"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="Nom :"
@@ -103,15 +103,15 @@
             x:Name="tboxNom"
             Grid.Row="1"
             Width="120"
-            Margin="106,90,0,0"
+            Margin="120,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding SelectedItem.Nom, ElementName=lvPersonnel}"
             TextWrapping="Wrap" />
         <TextBlock
-            x:Name="tblCodeBarre"
+            x:Name="tblPrenom"
             Grid.Row="1"
-            Margin="55,119,0,0"
+            Margin="70,120,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="Prénom :"
@@ -120,24 +120,24 @@
             x:Name="tboxPrenom"
             Grid.Row="1"
             Width="120"
-            Margin="114,119,0,0"
+            Margin="120,120,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding SelectedItem.Prenom, ElementName=lvPersonnel}"
             TextWrapping="Wrap" />
         <TextBlock
-            x:Name="tblEMail"
+            x:Name="tblEmail"
             Grid.Row="1"
-            Margin="51,148,0,0"
+            Margin="70,150,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="Référence :"
+            Text="Email :"
             TextWrapping="Wrap" />
         <TextBox
-            x:Name="tboxEMail"
+            x:Name="tboxEmail"
             Grid.Row="1"
             Width="120"
-            Margin="120,147,0,0"
+            Margin="120,150,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding SelectedItem.EMail, ElementName=lvPersonnel}"
@@ -152,7 +152,8 @@
             VerticalAlignment="Top"
             Background="DarkBlue"
             Content="Valider Ajout"
-            Foreground="White" />
+            Foreground="White"
+            Click="btValiderAjout_Click"/>
         <Button
             x:Name="btValiderModification"
             Grid.Row="1"
@@ -163,7 +164,8 @@
             VerticalAlignment="Top"
             Background="DarkBlue"
             Content="Valider Modification"
-            Foreground="White" />
+            Foreground="White"
+            Click="btValiderModification_Click"/>
         <Button
             x:Name="btAnnuler"
             Grid.Row="1"
@@ -185,7 +187,7 @@
             VerticalAlignment="Bottom"
             Background="DarkBlue"
             Content="Ajouter"
-            Foreground="White" />
+            Foreground="White" Click="btAjouter_Click" />
         <Button
             x:Name="btModifier"
             Grid.Row="1"
@@ -196,7 +198,7 @@
             VerticalAlignment="Bottom"
             Background="DarkBlue"
             Content="Modifier"
-            Foreground="White" />
+            Foreground="White" Click="btModifier_Click" />
         <Button
             x:Name="btSupprimer"
             Grid.Row="1"

@@ -9,7 +9,7 @@ namespace MATINFO.Metier
         public int IDPersonnel { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public string EMail { get; set; }
+        public string Email { get; set; }
 
         public List<EstAttribue> LesAttributions { get; set; }
 
@@ -18,7 +18,7 @@ namespace MATINFO.Metier
             IDPersonnel = idPersonnel;
             Nom = nom;
             Prenom = prenom;
-            EMail = eMail;
+            Email = eMail;
 
             LesAttributions = new List<EstAttribue>();
         }
@@ -29,7 +29,7 @@ namespace MATINFO.Metier
         public void Create()
         {
             new AccesDonnees().SetData($"insert into personnel (nompersonnel, prenompersonnel, emailpersonnel) " +
-                                       $"values ('{this.Nom}', '{this.Prenom}', '{this.EMail}')");
+                                       $"values ('{this.Nom}', '{this.Prenom}', '{this.Email}');");
         }
    
         public void Read()
@@ -40,8 +40,8 @@ namespace MATINFO.Metier
         public void Update()
         {
             new AccesDonnees().SetData($"update personnel set nompersonnel = '{this.Nom}', " +
-                                                            $"prenompersonnel = '{this.Prenom}', " +
-                                                            $"emailpersonnel = '{this.EMail}' " +
+                                       $"prenompersonnel = '{this.Prenom}', " +
+                                       $"emailpersonnel = '{this.Email}' " +
                                        $"where idpersonnel = {this.IDPersonnel};");
         }
    

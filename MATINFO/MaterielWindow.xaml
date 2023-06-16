@@ -144,7 +144,7 @@
             VerticalAlignment="Top"
             Background="DarkBlue"
             Content="Valider Ajout"
-            Foreground="White" />
+            Foreground="White" Click="btValiderAjout_Click" />
         <Button
             x:Name="btValiderModification"
             Grid.Row="1"
@@ -155,7 +155,7 @@
             VerticalAlignment="Top"
             Background="DarkBlue"
             Content="Valider Modification"
-            Foreground="White" />
+            Foreground="White" Click="btValiderModification_Click" />
         <Button
             x:Name="btAnnuler"
             Grid.Row="1"
@@ -166,7 +166,7 @@
             VerticalAlignment="Top"
             Background="DarkBlue"
             Content="Annuler"
-            Foreground="White" />
+            Foreground="White" Click="btAnnuler_Click" />
         <Button
             x:Name="btAjouter"
             Grid.Row="1"
@@ -177,7 +177,7 @@
             VerticalAlignment="Bottom"
             Background="DarkBlue"
             Content="Ajouter"
-            Foreground="White" />
+            Foreground="White" Click="btAjouter_Click" />
         <Button
             x:Name="btModifier"
             Grid.Row="1"
@@ -188,7 +188,7 @@
             VerticalAlignment="Bottom"
             Background="DarkBlue"
             Content="Modifier"
-            Foreground="White" />
+            Foreground="White" Click="btModifier_Click" />
         <Button
             x:Name="btSupprimer"
             Grid.Row="1"
@@ -201,13 +201,13 @@
             Content="Supprimer"
             Foreground="White" />
         <TextBlock
-            x:Name="tblReference_Copy"
+            x:Name="tblCategorie"
             Grid.Row="1"
             Margin="49,174,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="Catégorie :"
             TextWrapping="Wrap" />
-        <ComboBox x:Name="cbCategorie"  HorizontalAlignment="Left" Margin="117,171,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbCategorie"  HorizontalAlignment="Left" Margin="117,171,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
     </Grid>
 </Window>

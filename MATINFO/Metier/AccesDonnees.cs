@@ -113,12 +113,21 @@ namespace MATINFO.Metier
                 else
                     return 0;
             }
-            catch
+            catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 CloseConnection();
                 return 0;
             }
         }
         #endregion
+
+        //public string CheckForQuotes(string text)
+        //{
+        //    if (text.Contains("'") && !text.Contains("''"))
+        //        return $"{text.Substring(0, text.IndexOf("'"))}'{text.Substring(text.IndexOf("'")-1)}";
+        //    else
+        //        return text;
+        //}
     }
 }
