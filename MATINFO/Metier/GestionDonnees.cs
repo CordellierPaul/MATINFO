@@ -23,6 +23,10 @@ namespace MATINFO.Metier
             Refresh();
         }
         #endregion
+        /// <summary>
+        /// Recharge toutes les ObservableCollection de GestionDonnees avec la base de données. Utilisé dans le constructeur
+        /// pour tout créer et dans le code des fenêtres pour que tous les id générés concordent.
+        /// </summary>
         public void Refresh()
         {
             LesCategories = new CategorieMateriel().FindAll();
