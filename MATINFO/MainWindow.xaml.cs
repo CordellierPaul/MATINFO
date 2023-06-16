@@ -90,6 +90,11 @@ namespace MATINFO
             Close();
             personnelWindow.Show();
         }
+
+        private void btAfficherTout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         #endregion
 
         #region Selection change

@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <metier:GestionDonnees x:Name="donneesActuelles"/>
+        <metier:GestionDonnees x:Name="donneesActuelles" />
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>

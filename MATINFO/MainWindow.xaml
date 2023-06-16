@@ -30,7 +30,16 @@
             Content="MATINFO"
             FontSize="20"
             Foreground="White" />
-
+        <Button
+            x:Name="btAfficherTout"
+            Width="180"
+            Margin="0,17.5,30,17.5"
+            HorizontalAlignment="Right"
+            Background="Black"
+            BorderBrush="Transparent"
+            Content="Afficher tout"
+            FontSize="16"
+            Foreground="White" Click="btAfficherTout_Click" />
         <Button
             x:Name="btnHome"
             Width="50"
@@ -41,7 +50,6 @@
             Click="btnHome_Click">
             <Image Source="/maisonn.png" />
         </Button>
-
 
         <Rectangle
             Grid.Row="1"
@@ -59,7 +67,7 @@
             Foreground="Black" />
         <Label
             Grid.Row="1"
-            Margin="323,19,0,0"
+            Margin="334,19,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="White"
@@ -149,6 +157,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            BorderBrush="Transparent"
             Content="Ajouter attributions"
             FontSize="16"
             Foreground="White" />
@@ -162,6 +171,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            BorderBrush="Transparent"
             Content="Modifier attributions"
             FontSize="16"
             Foreground="White" />
@@ -175,6 +185,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
+            BorderBrush="Transparent"
             Click="btSupprimer_Click"
             Content="Supprimer attributions"
             FontSize="16"
@@ -202,7 +213,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
-            BorderBrush="White"
+            BorderBrush="Transparent"
             Click="btMaterielWindow_Click"
             Content="Matériel"
             FontSize="15"
@@ -216,7 +227,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             Background="DarkBlue"
-            BorderBrush="White"
+            BorderBrush="Transparent"
             Click="btPersonnelWindow_Click"
             Content="Personnel"
             FontSize="16"
@@ -245,5 +256,6 @@
             FontSize="16"
             FontWeight="Bold"
             Foreground="Black" />
+
     </Grid>
 </Window>
