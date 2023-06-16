@@ -106,12 +106,14 @@ namespace MATINFO
         #endregion
 
         #region filtres
-        // Si cette fonction renvoie true, le matériel est affiché
+        /// <summary>
+        /// Si cette fonction renvoie true, le matériel est affiché
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>true si materielDansLaListe à l'idCategorie qui correspond à une des/de la CategorieMateriel sélectionée(s)</returns>
         private bool FiltreMateriel(object item)
         {
             Materiel materielDansLaListe = (Materiel)item;
-            // true sera renvoyé si materielDansLaListe à l'idCategorie qui correspond
-            // à une des CategorieMateriel sélectionées
 
             if (lvCategorieMateriel.SelectedItem == null)
                 return true;    // Si rien n'est sélectionné dans lvCategorieMateriel, tout est affiché
@@ -125,12 +127,15 @@ namespace MATINFO
             return false;   // Ici il n'y a pas d'idPersonnel qui correspond
         }
 
-        // Si cette fonction renvoie true, l'attribution est affichée.
+        /// <summary>
+        /// Si cette fonction renvoie true, l'attribution est affichée
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>true si attributDansLaListe à l'idMateriel et à l'idPersonnel qui correspondent aux éléments
+        /// Materiel et Personnel. Aucune vérification ne sera faite si rien n'est sélectionné pour chaque élement </returns>
         private bool FiltreAttribution(object item)
         {
             EstAttribue attributDansLaListe = (EstAttribue)item;
-            // true sera renvoyé si attributDansLaListe à l'idMateriel et à l'idPersonnel qui correspondent
-            // aux éléments Materiel et Personnel. 
 
             if (lvMateriel.SelectedItem != null)    // Si quelque chose est séléctionné lvMateriel
             {
@@ -149,7 +154,7 @@ namespace MATINFO
                     return false;   // Ici il n'y a pas d'idMateriel qui correspond
             }
 
-            if (lvPersonnel.SelectedItem != null)    // Si quelque chose est séléctionné lvPersonnel
+            if (lvPersonnel.SelectedItem != null)   // Si quelque chose est séléctionné lvPersonnel
             {
                 foreach (Personnel unPersonnel in lvPersonnel.SelectedItems)
                 {
