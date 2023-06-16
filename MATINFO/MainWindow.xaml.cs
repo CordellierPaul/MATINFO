@@ -93,7 +93,10 @@ namespace MATINFO
 
         private void btAfficherTout_Click(object sender, RoutedEventArgs e)
         {
-
+            lvCategorieMateriel.SelectAll();
+            lvMateriel.SelectedIndex = -1;
+            lvAttribution.SelectedIndex = -1;
+            lvPersonnel.SelectedIndex = -1;
         }
         #endregion
 
