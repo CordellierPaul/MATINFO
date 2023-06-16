@@ -64,7 +64,7 @@ namespace MATINFO.Metier
             foreach (EstAttribue uneAttribution in LesAttributions)
                 uneAttribution.Delete();
 
-            new AccesDonnees().SetData($"delete from materiel where idmateriel = {IDMateriel} cascade;");
+            new AccesDonnees().SetData($"delete from materiel where idmateriel = {IDMateriel};");
         }
 
         public ObservableCollection<Materiel> FindAll()
