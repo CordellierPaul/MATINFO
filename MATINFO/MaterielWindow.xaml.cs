@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Collections.Generic;
 using MATINFO.Metier;
 
 namespace MATINFO
@@ -14,9 +16,14 @@ namespace MATINFO
             InitializeComponent();
             CacherControlesAjoutModif();
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
-
             foreach (CategorieMateriel categorie in donneesActuelles.LesCategories)
-                cbCategorie.Items.Add(categorie.Nom);
+            {
+                cbCategorie.Items.Add(new ComboBoxItem()
+                {
+                    Content = categorie.Nom,
+                    Name = $"Categorie{categorie.IDCategorieMateriel}"
+                });
+            }
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -70,7 +77,7 @@ namespace MATINFO
 
         private void btValiderAjout_Click(object sender, RoutedEventArgs e)
         {
-            new Materiel(0, donneesActuelles.LesCategories.Single(x => x.Nom == cbCategorie.SelectedItem).IDCategorieMateriel, tboxNom.Text, tboxCodeBarre.Text, tboxReference.Text).Create();
+            new Materiel(0, int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9)), tboxNom.Text, tboxCodeBarre.Text, tboxReference.Text).Create();
 
             CacherControlesAjoutModif();
             lvMateriel.IsEnabled = true;
@@ -81,7 +88,7 @@ namespace MATINFO
         }
         private void btValiderModification_Click(object sender, RoutedEventArgs e)
         {
-            ((Materiel)lvMateriel.SelectedItem).IDCategorieMateriel = donneesActuelles.LesCategories.Single(x=>x.Nom == cbCategorie.SelectedItem).IDCategorieMateriel;
+            ((Materiel)lvMateriel.SelectedItem).IDCategorieMateriel = int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9));
             ((Materiel)lvMateriel.SelectedItem).Nom = tboxNom.Text;
             ((Materiel)lvMateriel.SelectedItem).CodeBarre = tboxCodeBarre.Text;
             ((Materiel)lvMateriel.SelectedItem).Reference = tboxReference.Text;
