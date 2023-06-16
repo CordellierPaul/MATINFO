@@ -31,6 +31,8 @@ namespace MATINFO
             lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
 
+            lvCategorieMateriel.SelectAll();
+
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource);
             view.Filter = FiltreAttribution;
 
@@ -112,19 +114,16 @@ namespace MATINFO
         /// <summary>
         /// Si cette fonction renvoie true, le matériel est affiché
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="item">Un matériel dans la liste view</param>
         /// <returns>true si materielDansLaListe à l'idCategorie qui correspond à une des/de la CategorieMateriel sélectionée(s)</returns>
         private bool FiltreMateriel(object item)
         {
             Materiel materielDansLaListe = (Materiel)item;
 
-            if (lvCategorieMateriel.SelectedItem == null)
-                return true;    // Si rien n'est sélectionné dans lvCategorieMateriel, tout est affiché
-
             foreach (CategorieMateriel uneCategorie in lvCategorieMateriel.SelectedItems)
             {
                 if (materielDansLaListe.IDCategorieMateriel == uneCategorie.IDCategorieMateriel)
-                    return true;    // L'idCategorieMateriel correspont au matériel
+                    return true;    // L'idCategorieMateriel correspond au matériel
             }
 
             return false;   // Ici il n'y a pas d'idPersonnel qui correspond
@@ -133,9 +132,9 @@ namespace MATINFO
         /// <summary>
         /// Si cette fonction renvoie true, l'attribution est affichée
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns>true si attributDansLaListe à l'idMateriel et à l'idPersonnel qui correspondent aux éléments
-        /// Materiel et Personnel. Aucune vérification ne sera faite si rien n'est sélectionné pour chaque élement </returns>
+        /// <param name="item">Une attribution dans la liste view</param>
+        /// <returns>true si attributDansLaListe à l'idMateriel et à l'idPersonnel qui correspondent aux éléments Materiel
+        /// et Personnel. Aucune vérification ne sera faite si rien n'est sélectionné pour chaque élement </returns>
         private bool FiltreAttribution(object item)
         {
             EstAttribue attributDansLaListe = (EstAttribue)item;
