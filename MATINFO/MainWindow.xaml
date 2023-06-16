@@ -160,7 +160,7 @@
             BorderBrush="Transparent"
             Content="Ajouter attributions"
             FontSize="16"
-            Foreground="White" />
+            Foreground="White" Click="btAjouterAttrib_Click" />
 
         <Button
             x:Name="btModifierAttrib"
@@ -174,7 +174,7 @@
             BorderBrush="Transparent"
             Content="Modifier attributions"
             FontSize="16"
-            Foreground="White" />
+            Foreground="White" Click="btModifierAttrib_Click" />
 
         <Button
             x:Name="btSupprimerAttrib"

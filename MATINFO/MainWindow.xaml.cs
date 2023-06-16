@@ -23,15 +23,18 @@ namespace MATINFO
         public MainWindow()
         {
             InitializeComponent();
-
-            new AccesDonnees().OpenConnection();
-
+            refresh();
+        }
+        #endregion
+        public void refresh()
+        {
             lvCategorieMateriel.ItemsSource = donneesActuelles.LesCategories;
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
             lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
 
             lvCategorieMateriel.SelectAll();
+            lvMateriel.SelectedIndex = -1;
 
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource);
             view.Filter = FiltreAttribution;
@@ -41,7 +44,6 @@ namespace MATINFO
 
             DataContext = this;
         }
-        #endregion
 
         #region Evenements
 
@@ -110,9 +112,7 @@ namespace MATINFO
         {
             CollectionViewSource.GetDefaultView(lvMateriel.ItemsSource).Refresh();
             CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
-
-            if (lvMateriel.SelectedItem == null)
-                lvMateriel.SelectAll();
+            lvMateriel.SelectAll();
         }
         #endregion
 
@@ -178,5 +178,26 @@ namespace MATINFO
             return true;    // Rien n'est sélectionné
         }
         #endregion
+
+        private void btAjouterAttrib_Click(object sender, RoutedEventArgs e)
+        {
+            new PopupAttribution().ShowDialog();
+            donneesActuelles.Refresh();
+            lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
+            refresh();
+        }
+
+        private void btModifierAttrib_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvAttribution.SelectedItem == null)
+                MessageBox.Show("Veuillez selectionner une attribution a modiffier", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+            else
+            {
+                new PopupAttribution((EstAttribue)lvAttribution.SelectedItem).ShowDialog();
+                donneesActuelles.Refresh();
+                lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
+            }
+            refresh();
+        }
     }
 }

@@ -1,20 +1,84 @@
-﻿<Window x:Class="MATINFO.PopupAttribution"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MATINFO"
-        mc:Ignorable="d"
-        Title="PopupAttribution" Height="300" Width="400">
+﻿<Window
+    x:Class="MATINFO.PopupAttribution"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MATINFO"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:metier="clr-namespace:MATINFO.Metier"
+    Title="PopupAttribution"
+    Width="400"
+    Height="300"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <metier:GestionDonnees x:Name="donneesActuelles" />
+    </Window.DataContext>
     <Grid>
-        <Label Content="Ajout Attribution" FontSize="30" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Commentaire :" Margin="50, 70" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <TextBox x:Name="" Margin="50, 100" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Date :" Margin="50, 158, 0, 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <DatePicker x:Name="dpDate" Width="30" Height="30" BorderThickness="0" Margin="90, 160, 0, 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="materiel :" Margin="230, 70, 50, 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="cbMateriel" SelectedIndex="0" Height="25" Margin="230,100,50,0" VerticalAlignment="Top"/>
-        <Label Content="Personnel :" Margin="230, 130, 50, 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="cbPersonnel" SelectedIndex="0" Width="120" Height="25" Margin="230, 160, 50, 0" VerticalAlignment="Top"/>
+        <Label
+            Margin="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Ajout Attribution"
+            FontSize="30"
+            FontWeight="Bold" />
+        <Label
+            Margin="50,70"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Commentaire :" />
+        <TextBox
+            x:Name="tbCommentaire"
+            Width="100"
+            Height="50"
+            Margin="50,100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"/>
+        <Label
+            Margin="50,158,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Date :" />
+        <DatePicker
+            x:Name="dpDate"
+            Width="30"
+            Height="30"
+            Margin="90,160,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderThickness="0" />
+        <Label
+            Margin="230,70,50,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="materiel :" />
+        <ComboBox
+            x:Name="cbMateriel"
+            Height="25"
+            Margin="230,100,50,0"
+            VerticalAlignment="Top"
+            SelectedIndex="0" />
+        <Label
+            Margin="230,130,50,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Personnel :" />
+        <ComboBox
+            x:Name="cbPersonnel"
+            Width="120"
+            Height="25"
+            Margin="230,160,50,0"
+            VerticalAlignment="Top"
+            SelectedIndex="0" />
+        <Button
+            x:Name="btValider"
+            Content="Valider"
+            Width="120"
+            Height="50"
+            Margin="0,200,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="30"
+            FontWeight="Bold" Click="btValider_Click" />
     </Grid>
 </Window>
