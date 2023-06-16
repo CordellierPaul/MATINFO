@@ -111,15 +111,15 @@ namespace MATINFO
         {
             Materiel materielDansLaListe = (Materiel)item;
             // true sera renvoyé si materielDansLaListe à l'idCategorie qui correspond
-            // à un des éléments Materiel et Personnel.
+            // à une des CategorieMateriel sélectionées
 
-            if (lvCategorieMateriel.SelectedItem == null)    // Si rien n'est sélectionné dans lvCategorieMateriel, tout est affiché
-                return true;
+            if (lvCategorieMateriel.SelectedItem == null)
+                return true;    // Si rien n'est sélectionné dans lvCategorieMateriel, tout est affiché
 
             foreach (CategorieMateriel uneCategorie in lvCategorieMateriel.SelectedItems)
             {
                 if (materielDansLaListe.IDCategorieMateriel == uneCategorie.IDCategorieMateriel)
-                    return true;    // L'idPersonnel et l'idMateriel correspondent avec l'objet attributDansLaListe
+                    return true;    // L'idCategorieMateriel correspont au matériel
             }
 
             return false;   // Ici il n'y a pas d'idPersonnel qui correspond
