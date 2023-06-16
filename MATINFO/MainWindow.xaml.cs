@@ -26,13 +26,16 @@ namespace MATINFO
 
             new AccesDonnees().OpenConnection();
 
-            lvCategorie.ItemsSource = donneesActuelles.LesCategories;
+            lvCategorieMateriel.ItemsSource = donneesActuelles.LesCategories;
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
             lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
 
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource);
             view.Filter = FiltreAttribution;
+
+            view = (CollectionView)CollectionViewSource.GetDefaultView(lvMateriel.ItemsSource);
+            view.Filter = FiltreMateriel;
 
             DataContext = this;
         }
@@ -92,17 +95,42 @@ namespace MATINFO
         {
             CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
         }
+
+        private void lvCategorieMateriel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(lvMateriel.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
+        }
         #endregion
 
         #endregion
 
         #region filtres
+        // Si cette fonction renvoie true, le matériel est affiché
+        private bool FiltreMateriel(object item)
+        {
+            Materiel materielDansLaListe = (Materiel)item;
+            // true sera renvoyé si materielDansLaListe à l'idCategorie qui correspond
+            // à un des éléments Materiel et Personnel.
+
+            if (lvCategorieMateriel.SelectedItem == null)    // Si rien n'est sélectionné dans lvCategorieMateriel, tout est affiché
+                return true;
+
+            foreach (CategorieMateriel uneCategorie in lvCategorieMateriel.SelectedItems)
+            {
+                if (materielDansLaListe.IDCategorieMateriel == uneCategorie.IDCategorieMateriel)
+                    return true;    // L'idPersonnel et l'idMateriel correspondent avec l'objet attributDansLaListe
+            }
+
+            return false;   // Ici il n'y a pas d'idPersonnel qui correspond
+        }
+
         // Si cette fonction renvoie true, l'attribution est affichée.
         private bool FiltreAttribution(object item)
         {
             EstAttribue attributDansLaListe = (EstAttribue)item;
-            // true sera renvoyé si attributDansLaListe à l'idMateriel et à l'idPersonnel correspondent
-            // à un des éléments Materiel et Personnel. 
+            // true sera renvoyé si attributDansLaListe à l'idMateriel et à l'idPersonnel qui correspondent
+            // aux éléments Materiel et Personnel. 
 
             if (lvMateriel.SelectedItem != null)    // Si quelque chose est séléctionné lvMateriel
             {
@@ -132,9 +160,8 @@ namespace MATINFO
                 return false;   // Ici il n'y a pas d'idPersonnel qui correspond
             }
 
-            return true;
+            return true;    // Rien n'est sélectionné
         }
         #endregion
-
     }
 }

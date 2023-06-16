@@ -222,12 +222,13 @@
             FontSize="16"
             Foreground="White" />
         <ListView
-            x:Name="lvCategorie"
+            x:Name="lvCategorieMateriel"
             Grid.Row="1"
             Width="180"
             Margin="70,70,0,100"
             HorizontalAlignment="Left"
-            ItemsSource="{Binding LesCategories}">
+            ItemsSource="{Binding LesCategories}"
+            SelectionChanged="lvCategorieMateriel_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
