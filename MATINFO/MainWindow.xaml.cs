@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace MATINFO
 {
     /// <summary>
-    /// Logique d'interaction pour AttributionWindow.xaml
+    /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
