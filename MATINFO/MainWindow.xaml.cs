@@ -23,10 +23,16 @@ namespace MATINFO
         public MainWindow()
         {
             InitializeComponent();
-            refresh();
+            Refresh();
+
+            DataContext = this;
         }
         #endregion
-        public void refresh()
+
+        /// <summary>
+        /// Rafraîchit les List view pour s'assurer que ce qui est affiché à l'écran concorde avec la base de données.
+        /// </summary>
+        public void Refresh()
         {
             lvCategorieMateriel.ItemsSource = donneesActuelles.LesCategories;
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
@@ -41,13 +47,15 @@ namespace MATINFO
 
             view = (CollectionView)CollectionViewSource.GetDefaultView(lvMateriel.ItemsSource);
             view.Filter = FiltreMateriel;
-
-            DataContext = this;
         }
 
         #region Evenements
 
         #region Clicks boutons
+        /// <summary>
+        /// Lancé au clic du bouton en haut à gauche de l'écran. On revient à l'écran d'accueil de l'application.
+        /// </summary>
+        /// <param name="sender"></param>
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -55,6 +63,9 @@ namespace MATINFO
             this.Close();
         }
 
+        /// <summary>
+        /// Pour supprimer une attribution.
+        /// </summary>
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
             if (lvAttribution.SelectedItem == null)
@@ -72,6 +83,10 @@ namespace MATINFO
                 lvAttribution.SelectedIndex = 0;
             }
         }
+
+        /// <summary>
+        /// Pour ouvrir la fenêtere d'affichage des catégories.
+        /// </summary>
         private void btCategorieWindow_Click(object sender, RoutedEventArgs e)
         {
             CategorieWindow categorieWindow = new CategorieWindow();
@@ -79,6 +94,9 @@ namespace MATINFO
             categorieWindow.Show();
         }
 
+        /// <summary>
+        /// Pour ouvrir la fenêtere d'affichage des matériels.
+        /// </summary>
         private void btMaterielWindow_Click(object sender, RoutedEventArgs e)
         {
             MaterielWindow materielWindow = new MaterielWindow();
@@ -86,6 +104,9 @@ namespace MATINFO
             materielWindow.Show();
         }
 
+        /// <summary>
+        /// Pour ouvrir la fenêtere d'affichage du personnel.
+        /// </summary>
         private void btPersonnelWindow_Click(object sender, RoutedEventArgs e)
         {
             PersonnelWindow personnelWindow = new PersonnelWindow();
@@ -93,6 +114,10 @@ namespace MATINFO
             personnelWindow.Show();
         }
 
+        /// <summary>
+        /// Activé par le bouton en haut à droite de l'écran. Sert à remplir toutes les ListView de l'application de
+        /// toutes les données de la base.
+        /// </summary>
         private void btAfficherTout_Click(object sender, RoutedEventArgs e)
         {
             lvCategorieMateriel.SelectAll();
@@ -103,11 +128,19 @@ namespace MATINFO
         #endregion
 
         #region Selection change
+        /// <summary>
+        /// Déclenché lorsque la sélection de la ListView du personnel ou du matériel change.
+        /// Rafraîchit la ListView des attributions.
+        /// </summary>
         private void lvMaterielPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
         }
 
+        /// <summary>
+        /// Déclenché lorsque la sélection de la ListView des catégories du matériel change.
+        /// Rafraîchit la ListView du matériel et des attributions.
+        /// </summary>
         private void lvCategorieMateriel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lvMateriel.ItemsSource).Refresh();
@@ -120,9 +153,9 @@ namespace MATINFO
 
         #region filtres
         /// <summary>
-        /// Si cette fonction renvoie true, le matériel est affiché
+        /// Si cette fonction renvoie true, le matériel est affiché.
         /// </summary>
-        /// <param name="item">Un matériel dans la liste view</param>
+        /// <param name="item">Un matériel dans la ListView</param>
         /// <returns>true si materielDansLaListe à l'idCategorie qui correspond à une des/de la CategorieMateriel sélectionée(s)</returns>
         private bool FiltreMateriel(object item)
         {
@@ -140,7 +173,7 @@ namespace MATINFO
         /// <summary>
         /// Si cette fonction renvoie true, l'attribution est affichée
         /// </summary>
-        /// <param name="item">Une attribution dans la liste view</param>
+        /// <param name="item">Une attribution dans la ListView</param>
         /// <returns>true si attributDansLaListe à l'idMateriel et à l'idPersonnel qui correspondent aux éléments Materiel
         /// et Personnel. Aucune vérification ne sera faite si rien n'est sélectionné pour chaque élement </returns>
         private bool FiltreAttribution(object item)
@@ -179,14 +212,20 @@ namespace MATINFO
         }
         #endregion
 
+        /// <summary>
+        /// Pour le bouton qui sert à ajouter une attribution. Ouvre la fenêtre correspondante.
+        /// </summary>
         private void btAjouterAttrib_Click(object sender, RoutedEventArgs e)
         {
             new PopupAttribution().ShowDialog();
             donneesActuelles.Refresh();
             lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
-            refresh();
+            Refresh();
         }
 
+        /// <summary>
+        /// Pour le bouton qui sert à modifier une attribution. Ouvre la fenêtre correspondante.
+        /// </summary>
         private void btModifierAttrib_Click(object sender, RoutedEventArgs e)
         {
             if (lvAttribution.SelectedItem == null)
@@ -197,7 +236,7 @@ namespace MATINFO
                 donneesActuelles.Refresh();
                 lvAttribution.ItemsSource = donneesActuelles.LesAttributions;
             }
-            refresh();
+            Refresh();
         }
     }
 }
