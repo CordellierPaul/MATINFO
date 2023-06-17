@@ -4,7 +4,7 @@ using MATINFO.Metier;
 namespace MATINFO
 {
     /// <summary>
-    /// Logique d'interaction pour PersonnelRep.xaml
+    /// Logique d'interaction pour PersonnelWindow.xaml
     /// </summary>
     public partial class PersonnelWindow : Window
     {
@@ -13,10 +13,12 @@ namespace MATINFO
             InitializeComponent();
             CacherControlesAjoutModif();
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
-
         }
 
         #region evenements clicks boutons
+        /// <summary>
+        /// Lancé au clic du bouton en haut à gauche de l'écran. On revient à l'écran d'accueil de l'application (MainWindow.xaml).
+        /// </summary>
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -24,6 +26,9 @@ namespace MATINFO
             window.Show();
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton qui supprime le dernier personnel sélectionné.
+        /// </summary>
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
             if (lvPersonnel.SelectedItem == null)
@@ -41,6 +46,10 @@ namespace MATINFO
             }
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton pour ajouter un personnel. Affiche les champs qui permettre d'ajouter
+        /// et de modifier le personnel, et le bouton de validation d'ajout.
+        /// </summary>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
 
@@ -51,8 +60,11 @@ namespace MATINFO
             tblAnnonceAction.Text = "Ajout de personnel";
             lvPersonnel.IsEnabled = false;
         }
-        
 
+        /// <summary>
+        /// Lancé au clic du bouton pour modifier un personnel. Affiche les champs qui permettre d'ajouter
+        /// et de modifier le personnel, et le bouton de validation de modification.
+        /// </summary>
         private void btModifier_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
@@ -64,6 +76,9 @@ namespace MATINFO
             lvPersonnel.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Ajoute le personnel marqué dans les champs d'ajout et de modification.
+        /// </summary>
         private void btValiderAjout_Click(object sender, RoutedEventArgs e)
         {
             new Personnel(0, tboxNom.Text, tboxPrenom.Text, tboxEmail.Text).Create();
@@ -75,6 +90,10 @@ namespace MATINFO
 
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
         }
+
+        /// <summary>
+        /// Modifie le personnel sélectionné en fonction des champs d'ajout et de modification.
+        /// </summary>
         private void btValiderModification_Click(object sender, RoutedEventArgs e)
         {
             ((Personnel)lvPersonnel.SelectedItem).Nom = tboxNom.Text;
@@ -90,6 +109,10 @@ namespace MATINFO
             lvPersonnel.ItemsSource = donneesActuelles.LePersonnel;
         }
 
+        /// <summary>
+        /// Déclenché au clic du bouton "Annuler", visible uniquement lorsque les champs d'ajout et de modification.
+        /// Cache ces champs.
+        /// </summary>
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             CacherControlesAjoutModif();
@@ -99,6 +122,9 @@ namespace MATINFO
 
         #region Gestion affichage pour ajout/modification donnée
 
+        /// <summary>
+        /// Affiche les champs d'ajout, de modification, les boutons et les textes qui vont avec.
+        /// </summary>
         private void AfficherControlesAjoutModif()
         {
             tblAnnonceAction.Visibility = Visibility.Visible;
@@ -112,6 +138,9 @@ namespace MATINFO
             btAnnuler.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Cache les champs d'ajout, de modification, les boutons et les textes qui vont avec.
+        /// </summary>
         private void CacherControlesAjoutModif()
         {
             tblAnnonceAction.Visibility = Visibility.Hidden;
@@ -128,6 +157,5 @@ namespace MATINFO
         }
 
         #endregion
-
     }
 }

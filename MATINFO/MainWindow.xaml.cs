@@ -53,9 +53,8 @@ namespace MATINFO
 
         #region Clicks boutons
         /// <summary>
-        /// Lancé au clic du bouton en haut à gauche de l'écran. On revient à l'écran d'accueil de l'application.
+        /// Lancé au clic du bouton en haut à gauche de l'écran. On ferme et rouvre cette fenêtere, car c'est celle d'accueil.
         /// </summary>
-        /// <param name="sender"></param>
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();

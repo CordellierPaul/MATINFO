@@ -7,7 +7,7 @@ using MATINFO.Metier;
 namespace MATINFO
 {
     /// <summary>
-    /// Logique d'interaction pour MaterielRep.xaml
+    /// Logique d'interaction pour MaterielWindow.xaml
     /// </summary>
     public partial class MaterielWindow : Window
     {
@@ -26,6 +26,9 @@ namespace MATINFO
             }
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton en haut à gauche de l'écran. On revient à l'écran d'accueil de l'application (MainWindow.xaml).
+        /// </summary>
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -33,6 +36,9 @@ namespace MATINFO
             this.Close();
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton qui supprime la dernier matériel sélectionné.
+        /// </summary>
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
             if (lvMateriel.SelectedItem == null)
@@ -51,7 +57,11 @@ namespace MATINFO
         }
 
         #region evenements clicks boutons
-        
+
+        /// <summary>
+        /// Lancé au clic du bouton pour ajouter un matériel. Affiche les champs qui permettre d'ajouter
+        /// et de modifier les matériels, et le bouton de validation d'ajout.
+        /// </summary>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
@@ -64,6 +74,10 @@ namespace MATINFO
             lvMateriel.IsEnabled = false;
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton pour modifier un matériel. Affiche les champs qui permettre d'ajouter
+        /// et de modifier les matériels, et le bouton de validation de modification.
+        /// </summary>
         private void btModifier_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
@@ -75,6 +89,9 @@ namespace MATINFO
             lvMateriel.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Ajoute le matériel marqué dans les champs d'ajout et de modification.
+        /// </summary>
         private void btValiderAjout_Click(object sender, RoutedEventArgs e)
         {
             new Materiel(0, int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9)), tboxNom.Text, tboxCodeBarre.Text, tboxReference.Text).Create();
@@ -86,6 +103,10 @@ namespace MATINFO
 
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
         }
+
+        /// <summary>
+        /// Modifie le matériel sélectionné en fonction des champs d'ajout et de modification.
+        /// </summary>
         private void btValiderModification_Click(object sender, RoutedEventArgs e)
         {
             ((Materiel)lvMateriel.SelectedItem).IDCategorieMateriel = int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9));
@@ -102,14 +123,22 @@ namespace MATINFO
             lvMateriel.ItemsSource = donneesActuelles.LesMateriels;
         }
 
+        /// <summary>
+        /// Déclenché au clic du bouton "Annuler", visible uniquement lorsque les champs d'ajout et de modification.
+        /// Cache ces champs, et le texte qui va avec.
+        /// </summary>
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             CacherControlesAjoutModif();
             lvMateriel.IsEnabled = true;
         }
         #endregion
+
         #region Gestion affichage pour ajout/modification donnée
 
+        /// <summary>
+        /// Affiche les champs d'ajout, de modification, les boutons et les textes qui vont avec.
+        /// </summary>
         private void AfficherControlesAjoutModif()
         {
             tblAnnonceAction.Visibility = Visibility.Visible;
@@ -125,6 +154,9 @@ namespace MATINFO
             btAnnuler.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Cache les champs d'ajout, de modification, les boutons et les textes qui vont avec.
+        /// </summary>
         private void CacherControlesAjoutModif()
         {
             tblAnnonceAction.Visibility = Visibility.Hidden;
@@ -143,6 +175,5 @@ namespace MATINFO
         }
 
         #endregion
-
     }
 }
