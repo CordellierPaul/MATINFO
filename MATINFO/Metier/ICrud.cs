@@ -10,7 +10,6 @@ namespace MATINFO.Metier
 {
     public interface ICrud<T>
     {
-        #region CRUD classique
         /// <summary>
         /// Insère dans la base de données l'objet this (en SQL avec insert)
         /// </summary>
@@ -30,7 +29,6 @@ namespace MATINFO.Metier
         /// Supprime l'objet dans la base de données (en SQL avec delete)
         /// </summary>
         void Delete();
-        #endregion
 
         /// <summary>
         /// Parcours tout les objets <T> de la base de données et les renvoie (en sql avec select)
