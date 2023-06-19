@@ -33,7 +33,7 @@ namespace MATINFO
         #endregion
 
         /// <summary>
-        /// Rafraîchit les List view pour s'assurer que ce qui est affiché à l'écran concorde avec la base de données.
+        /// Rafraîchit les ListView pour s'assurer que ce qui est affiché à l'écran concorde avec la base de données.
         /// </summary>
         public void Refresh()
         {
