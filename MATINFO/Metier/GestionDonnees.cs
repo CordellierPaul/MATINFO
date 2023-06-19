@@ -10,19 +10,16 @@ namespace MATINFO.Metier
 {
     public class GestionDonnees
     {
-        #region declaration de variables
         public ObservableCollection<CategorieMateriel> LesCategories { get; set; }
         public ObservableCollection<Materiel> LesMateriels { get; set; }
         public ObservableCollection<Personnel> LePersonnel { get; set; }
         public ObservableCollection<EstAttribue> LesAttributions { get; set; }
-        #endregion
 
-        #region Constructeur
         public GestionDonnees()
         {
             Refresh();
         }
-        #endregion
+
         /// <summary>
         /// Recharge toutes les ObservableCollection de GestionDonnees avec la base de données. Utilisé dans le constructeur
         /// pour tout créer et dans le code des fenêtres pour que tous les id générés concordent.

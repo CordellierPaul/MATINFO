@@ -9,16 +9,13 @@ namespace MATINFO.Metier
 {
     public class EstAttribue : ICrud<EstAttribue>
     {
-        #region declaration de variables
         public int IDMateriel { get; set; }
         public Materiel? UnMateriel { get; set; }
         public int IDPersonnel { get; set; }
         public Personnel? UnPersonnel { get; set; }
         public string DateAttribution { get; set; }
         public string? Commentaire { get; set; }
-        #endregion
 
-        #region Constructeurs
         public EstAttribue(int idMateriel, int idPersonnel, string dateAttribution, string? commentaire)
         {
             IDMateriel = idMateriel;
@@ -28,9 +25,7 @@ namespace MATINFO.Metier
         }
 
         public EstAttribue() : this(1, 1, DateTime.Today.ToShortDateString(), "") { }
-        #endregion
-
-        #region Implementation de l'interface CRUD
+        
         public void Create()
         {
             if (string.IsNullOrWhiteSpace(Commentaire))
@@ -78,6 +73,5 @@ namespace MATINFO.Metier
             }
             return lesAttributions;
         }
-        #endregion
     }
 }

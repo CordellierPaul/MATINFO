@@ -56,7 +56,6 @@ namespace MATINFO
             }
         }
 
-        #region evenements clicks boutons
 
         /// <summary>
         /// Lancé au clic du bouton pour ajouter un matériel. Affiche les champs qui permettre d'ajouter
@@ -132,9 +131,7 @@ namespace MATINFO
             CacherControlesAjoutModif();
             lvMateriel.IsEnabled = true;
         }
-        #endregion
 
-        #region Gestion affichage pour ajout/modification donnée
 
         /// <summary>
         /// Affiche les champs d'ajout, de modification, les boutons et les textes qui vont avec.
@@ -173,7 +170,5 @@ namespace MATINFO
             btValiderModification.Visibility = Visibility.Hidden;
             btAnnuler.Visibility = Visibility.Hidden;
         }
-
-        #endregion
     }
 }

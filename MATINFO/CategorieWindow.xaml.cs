@@ -12,7 +12,6 @@ namespace MATINFO
     /// </summary>
     public partial class CategorieWindow : Window
     {
-        #region Constructeur
         public CategorieWindow()
         {
             InitializeComponent();
@@ -21,9 +20,6 @@ namespace MATINFO
             
             DataContext = this;
         }
-        #endregion
-
-        #region evenements clicks boutons
         /// <summary>
         /// Lancé au clic du bouton en haut à gauche de l'écran. On revient à l'écran d'accueil de l'application (MainWindow.xaml).
         /// </summary>
@@ -127,9 +123,6 @@ namespace MATINFO
             CacherControlesAjoutModif();
             lvCategorie.IsEnabled = true;
         }
-        #endregion
-
-        #region Gestion affichage pour ajout/modification donnée
 
         /// <summary>
         /// Affiche les champs d'ajout, de modification, les boutons et les textes qui vont avec.
@@ -156,7 +149,5 @@ namespace MATINFO
             btValiderModification.Visibility = Visibility.Hidden;
             btAnnuler.Visibility = Visibility.Hidden;
         }
-
-        #endregion
     }
 }

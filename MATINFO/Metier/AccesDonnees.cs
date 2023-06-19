@@ -18,7 +18,6 @@ namespace MATINFO.Metier
     {
         public NpgsqlConnection? NpgSQLConnect { get; set; }
 
-        #region Gestion de la connection a la base
         /// <summary>
         /// Connexion à la base de données
         /// </summary>
@@ -55,9 +54,7 @@ namespace MATINFO.Metier
                     NpgSQLConnect.Close();
                 }
         }
-        #endregion
 
-        #region gestion des interactions avec la base
         /// <summary>
         /// Accès à des données en lecture
         /// </summary>
@@ -120,7 +117,6 @@ namespace MATINFO.Metier
                 return 0;
             }
         }
-        #endregion
 
         //public string CheckForQuotes(string text)
         //{

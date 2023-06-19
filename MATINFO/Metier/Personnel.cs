@@ -25,7 +25,7 @@ namespace MATINFO.Metier
 
         public Personnel() : this(1, "", "", "") { }
 
-        #region Implementation de l'interface CRUD
+
         public void Create()
         {
             new AccesDonnees().SetData($"insert into personnel (nompersonnel, prenompersonnel, emailpersonnel) " +
@@ -70,6 +70,5 @@ namespace MATINFO.Metier
             }
             return lePersonnel;
         }
-        #endregion
     }
 }

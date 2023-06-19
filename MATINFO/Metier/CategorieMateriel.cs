@@ -21,8 +21,6 @@ namespace MATINFO.Metier
 
         public CategorieMateriel() : this(0, "") { }
 
-
-        #region Implementation de l'interface CRUD
         public void Create()
         {
             new AccesDonnees().SetData($"insert into categorie_materiel (nomcategorie) values ('{this.Nom}');");
@@ -62,6 +60,5 @@ namespace MATINFO.Metier
             }
             return lesCategories;
         }
-        #endregion
     }
 }

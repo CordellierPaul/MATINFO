@@ -19,7 +19,6 @@ namespace MATINFO
     /// </summary>
     public partial class MainWindow : Window
     {
-        #region Constructeur
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +29,6 @@ namespace MATINFO
             new Materiel(0, 5, "Test1", "Test2", "Test3").Delete();
             new CategorieMateriel(0, "TestNomDeLaCategorie").Delete();
         }
-        #endregion
 
         /// <summary>
         /// Rafraîchit les ListView pour s'assurer que ce qui est affiché à l'écran concorde avec la base de données.
@@ -52,9 +50,6 @@ namespace MATINFO
             view.Filter = FiltreMateriel;
         }
 
-        #region Evenements
-
-        #region Clicks boutons
         /// <summary>
         /// Lancé au clic du bouton en haut à gauche de l'écran. On ferme et rouvre cette fenêtere, car c'est celle d'accueil.
         /// </summary>
@@ -127,9 +122,7 @@ namespace MATINFO
             lvAttribution.SelectedIndex = -1;
             lvPersonnel.SelectedIndex = -1;
         }
-        #endregion
 
-        #region Selection change
         /// <summary>
         /// Déclenché lorsque la sélection de la ListView du personnel ou du matériel change.
         /// Rafraîchit la ListView des attributions.
@@ -149,11 +142,7 @@ namespace MATINFO
             CollectionViewSource.GetDefaultView(lvAttribution.ItemsSource).Refresh();
             lvMateriel.SelectAll();
         }
-        #endregion
 
-        #endregion
-
-        #region filtres
         /// <summary>
         /// Si cette fonction renvoie true, le matériel est affiché.
         /// </summary>
@@ -212,7 +201,6 @@ namespace MATINFO
 
             return true;    // Rien n'est sélectionné
         }
-        #endregion
 
         /// <summary>
         /// Pour le bouton qui sert à ajouter une attribution. Ouvre la fenêtre correspondante.
