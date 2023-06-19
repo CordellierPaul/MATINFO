@@ -12,9 +12,23 @@
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+
     <Window.DataContext>
         <metier:GestionDonnees x:Name="donneesActuelles" />
     </Window.DataContext>
+
+    <Window.Resources>
+        <Style x:Key="BoutonOuvertureFenetre" TargetType="Button">
+            <Setter Property="Grid.Row" Value="1" />
+            <Setter Property="Width" Value="180" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="DarkBlue" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -37,9 +51,10 @@
             HorizontalAlignment="Right"
             Background="Black"
             BorderBrush="Transparent"
+            Click="btAfficherTout_Click"
             Content="Afficher tout"
             FontSize="16"
-            Foreground="White" Click="btAfficherTout_Click" />
+            Foreground="White" />
         <Button
             x:Name="btnHome"
             Width="50"
@@ -150,88 +165,54 @@
 
         <Button
             x:Name="btAjouterAttrib"
-            Grid.Row="1"
-            Width="180"
-            Height="30"
             Margin="564,0,0,50"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            BorderBrush="Transparent"
+            Click="btAjouterAttrib_Click"
             Content="Ajouter attributions"
-            FontSize="16"
-            Foreground="White" Click="btAjouterAttrib_Click" />
+            Style="{StaticResource BoutonOuvertureFenetre}" />
 
         <Button
             x:Name="btModifierAttrib"
-            Grid.Row="1"
-            Width="180"
-            Height="30"
             Margin="797,0,0,50"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            BorderBrush="Transparent"
+            Click="btModifierAttrib_Click"
             Content="Modifier attributions"
-            FontSize="16"
-            Foreground="White" Click="btModifierAttrib_Click" />
+            Style="{StaticResource BoutonOuvertureFenetre}" />
 
         <Button
             x:Name="btSupprimerAttrib"
-            Grid.Row="1"
-            Width="180"
-            Height="30"
             Margin="1016,0,0,50"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            BorderBrush="Transparent"
             Click="btSupprimer_Click"
             Content="Supprimer attributions"
-            FontSize="16"
-            Foreground="White" />
+            Style="{StaticResource BoutonOuvertureFenetre}" />
         <Button
             x:Name="btCategorieWindow"
-            Grid.Row="1"
-            Width="180"
-            Height="30"
             Margin="70,0,0,50"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            BorderBrush="White"
             Click="btCategorieWindow_Click"
             Content="Catégories du matériel"
-            FontSize="15"
-            Foreground="White" />
+            Style="{StaticResource BoutonOuvertureFenetre}" />
         <Button
             x:Name="btMaterielWindow"
-            Grid.Row="1"
-            Width="180"
-            Height="30"
             Margin="317,0,0,50"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            BorderBrush="Transparent"
             Click="btMaterielWindow_Click"
             Content="Matériel"
-            FontSize="15"
-            Foreground="White" />
+            Style="{StaticResource BoutonOuvertureFenetre}" />
         <Button
             x:Name="btPersonnelWindow"
-            Grid.Row="1"
-            Width="166"
-            Height="30"
             Margin="0,0,92,50"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            Background="DarkBlue"
-            BorderBrush="Transparent"
             Click="btPersonnelWindow_Click"
             Content="Personnel"
-            FontSize="16"
-            Foreground="White" />
+            Style="{StaticResource BoutonOuvertureFenetre}" />
         <ListView
             x:Name="lvCategorieMateriel"
             Grid.Row="1"
