@@ -26,6 +26,9 @@ namespace MATINFO
             Refresh();
 
             DataContext = this;
+
+            new Materiel(0, 5, "Test1", "Test2", "Test3").Delete();
+            new CategorieMateriel(0, "TestNomDeLaCategorie").Delete();
         }
         #endregion
 
