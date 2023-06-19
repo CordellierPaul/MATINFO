@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:metier="clr-namespace:MATINFO.Metier"
     Title="PopupAttribution"
-    Width="400"
+    Width="450"
     Height="300"
     mc:Ignorable="d">
     <Window.DataContext>
@@ -33,7 +33,7 @@
             Margin="50,100"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap"/>
+            TextWrapping="Wrap" />
         <Label
             Margin="50,158,0,0"
             HorizontalAlignment="Left"
@@ -72,13 +72,14 @@
             SelectedIndex="0" />
         <Button
             x:Name="btValider"
-            Content="Valider"
             Width="120"
             Height="50"
             Margin="0,200,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            Click="btValider_Click"
+            Content="Valider"
             FontSize="30"
-            FontWeight="Bold" Click="btValider_Click" />
+            FontWeight="Bold" />
     </Grid>
 </Window>
