@@ -46,7 +46,7 @@ namespace MATINFO.Metier.Tests
 
             foreach (EstAttribue unAttribut in uneAutreAttribution.FindAll())
             {
-                if (unAttribut.IDMateriel == 1 && unAttribut.IDPersonnel == 1 && unAttribut.DateAttribution == "14/06/2024" && unAttribut.Commentaire == "Exemple c0mmentaire -95412")
+                if (unAttribut.IDMateriel == 1 && unAttribut.IDPersonnel == 1 && unAttribut.DateAttribution == "12/06/2022" && unAttribut.Commentaire == "Un autre c0mmentaire 62347")
                 {
                     materielTrouve = true;
                     break;

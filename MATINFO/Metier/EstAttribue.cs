@@ -50,11 +50,11 @@ namespace MATINFO.Metier
         {
             if (string.IsNullOrWhiteSpace(Commentaire))
                 new AccesDonnees().SetData($"update est_attribue set dateattribution = '{this.DateAttribution}'" +
-                    $"where idmateriel = {this.UnMateriel!.IDMateriel} and idpersonnel = {this.UnPersonnel!.IDPersonnel};");
+                    $"where idmateriel = {this.IDMateriel} and idpersonnel = {this.IDPersonnel};");
             else
                 new AccesDonnees().SetData($"update est_attribue set commentaireattribution = '{this.Commentaire}'," +
                     $"dateattribution = '{this.DateAttribution}'" +
-                    $"where idmateriel = {this.UnMateriel!.IDMateriel} and idpersonnel = {this.UnPersonnel!.IDPersonnel};");
+                    $"where idmateriel = {this.IDMateriel} and idpersonnel = {this.IDPersonnel};");
         }
    
         public void Delete()

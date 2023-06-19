@@ -55,7 +55,6 @@ namespace MATINFO.Metier
                     if (uneAttribution.IDMateriel == unMateriel.IDMateriel)
                     {
                         unMateriel.LesAttributions.Add(uneAttribution);
-                        uneAttribution.UnMateriel = unMateriel;
                     }
                 }
 
@@ -65,7 +64,6 @@ namespace MATINFO.Metier
                     if (uneAttribution.IDPersonnel == unPersonnel.IDPersonnel)
                     {
                         unPersonnel.LesAttributions.Add(uneAttribution);
-                        uneAttribution.UnPersonnel = unPersonnel;
                     }
                 }
             }
