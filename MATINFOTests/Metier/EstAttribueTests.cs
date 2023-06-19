@@ -32,7 +32,30 @@ namespace MATINFO.Metier.Tests
         [TestMethod()]
         public void UpdateTest()
         {
+            uneAttribution.Create();
 
+            EstAttribue uneAutreAttribution = uneAttribution;
+
+            uneAutreAttribution.DateAttribution = "12/06/2022";
+
+            uneAutreAttribution.Commentaire = "Un autre c0mmentaire 62347";
+
+            uneAutreAttribution.Update();
+
+            bool materielTrouve = false;
+
+            foreach (EstAttribue unAttribut in uneAutreAttribution.FindAll())
+            {
+                if (unAttribut.IDMateriel == 1 && unAttribut.IDPersonnel == 1 && unAttribut.DateAttribution == "14/06/2024" && unAttribut.Commentaire == "Exemple c0mmentaire -95412")
+                {
+                    materielTrouve = true;
+                    break;
+                }
+            }
+
+            Assert.IsTrue(materielTrouve);
+
+            uneAutreAttribution.Delete();
         }
 
         [TestMethod()]
