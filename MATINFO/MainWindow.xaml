@@ -37,7 +37,7 @@
 
 
         <!--  En-tête  -->
-        <Border Padding="10" Background="DarkBlue" />
+        <Border Background="DarkBlue" />
         <Label
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -66,41 +66,41 @@
             <Image Source="/maisonn.png" />
         </Button>
 
+        <!--  Contenu (avec la Ressource TexteNomDonnees dans App.xaml)  -->
+
         <Rectangle
             Grid.Row="1"
             Margin="30,30,30,30"
             Stroke="Black" />
         <Label
             Grid.Row="1"
-            Margin="750,19,0,0"
+            Margin="77,19,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="White"
-            Content="Attribution"
-            FontSize="16"
-            FontWeight="Bold"
-            Foreground="Black" />
+            Content="Catégoires du matériel"
+            Style="{StaticResource TexteNomDonnees}" />
         <Label
             Grid.Row="1"
             Margin="334,19,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="White"
             Content="Matériel"
-            FontSize="16"
-            FontWeight="Bold"
-            Foreground="Black" />
+            Style="{StaticResource TexteNomDonnees}" />
+        <Label
+            Grid.Row="1"
+            Margin="750,19,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Attribution"
+            Style="{StaticResource TexteNomDonnees}" />
         <Label
             Grid.Row="1"
             Width="84"
             Margin="0,19,153,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Background="White"
             Content="Personnel"
-            FontSize="16"
-            FontWeight="Bold"
-            Foreground="Black" />
+            Style="{StaticResource TexteNomDonnees}" />
 
         <ListView
             x:Name="lvMateriel"
@@ -227,16 +227,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label
-            Grid.Row="1"
-            Margin="77,19,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="White"
-            Content="Catégoires du matériel"
-            FontSize="16"
-            FontWeight="Bold"
-            Foreground="Black" />
-
     </Grid>
 </Window>
