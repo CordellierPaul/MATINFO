@@ -11,9 +11,9 @@ namespace MATINFO.Metier
     {
         #region declaration de variables
         public int IDMateriel { get; set; }
-        public Materiel UnMateriel { get; set; }
+        public Materiel? UnMateriel { get; set; }
         public int IDPersonnel { get; set; }
-        public Personnel UnPersonnel { get; set; }
+        public Personnel? UnPersonnel { get; set; }
         public string DateAttribution { get; set; }
         public string? Commentaire { get; set; }
         #endregion
@@ -33,7 +33,7 @@ namespace MATINFO.Metier
         #region Implementation de l'interface CRUD
         public void Create()
         {
-            if (String.IsNullOrWhiteSpace(Commentaire))
+            if (string.IsNullOrWhiteSpace(Commentaire))
                 new AccesDonnees().SetData($"insert into est_attribue (idmateriel, idpersonnel, dateattribution) " +
                                        $"values ({this.IDMateriel}, {this.IDPersonnel}, '{this.DateAttribution}')");
             else
@@ -48,13 +48,13 @@ namespace MATINFO.Metier
    
         public void Update()
         {
-            if (String.IsNullOrWhiteSpace(Commentaire))
+            if (string.IsNullOrWhiteSpace(Commentaire))
                 new AccesDonnees().SetData($"update est_attribue set dateattribution = '{this.DateAttribution}'" +
-                    $"where idmateriel = {this.UnMateriel.IDMateriel} and idpersonnel = {this.UnPersonnel.IDPersonnel};");
+                    $"where idmateriel = {this.UnMateriel!.IDMateriel} and idpersonnel = {this.UnPersonnel!.IDPersonnel};");
             else
                 new AccesDonnees().SetData($"update est_attribue set commentaireattribution = '{this.Commentaire}'," +
                     $"dateattribution = '{this.DateAttribution}'" +
-                    $"where idmateriel = {this.UnMateriel.IDMateriel} and idpersonnel = {this.UnPersonnel.IDPersonnel};");
+                    $"where idmateriel = {this.UnMateriel!.IDMateriel} and idpersonnel = {this.UnPersonnel!.IDPersonnel};");
         }
    
         public void Delete()
