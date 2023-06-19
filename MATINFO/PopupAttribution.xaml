@@ -51,7 +51,7 @@
             Margin="230,70,50,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="materiel :" />
+            Content="Matériel :" />
         <ComboBox
             x:Name="cbMateriel"
             Height="25"

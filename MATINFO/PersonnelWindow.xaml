@@ -53,11 +53,8 @@
             Margin="478,35,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="White"
             Content="Personnels"
-            FontSize="16"
-            FontWeight="Bold"
-            Foreground="Black" />
+            Style="{StaticResource TexteNomDonnees}" />
         <ListView
             x:Name="lvPersonnel"
             Grid.Row="1"

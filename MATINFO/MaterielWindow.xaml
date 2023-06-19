@@ -53,11 +53,8 @@
             Margin="478,35,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="White"
             Content="Matériel"
-            FontSize="16"
-            FontWeight="Bold"
-            Foreground="Black" />
+            Style="{StaticResource TexteNomDonnees}" />
         <ListView
             x:Name="lvMateriel"
             Grid.Row="1"
@@ -221,6 +218,6 @@
             Margin="120,171,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            SelectedIndex="0"/>
+            SelectedIndex="0" />
     </Grid>
 </Window>
