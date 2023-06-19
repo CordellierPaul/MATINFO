@@ -23,6 +23,10 @@ namespace MATINFO.Metier
             Refresh();
         }
         #endregion
+        /// <summary>
+        /// Recharge toutes les ObservableCollection de GestionDonnees avec la base de données. Utilisé dans le constructeur
+        /// pour tout créer et dans le code des fenêtres pour que tous les id générés concordent.
+        /// </summary>
         public void Refresh()
         {
             LesCategories = new CategorieMateriel().FindAll();
@@ -51,7 +55,6 @@ namespace MATINFO.Metier
                     if (uneAttribution.IDMateriel == unMateriel.IDMateriel)
                     {
                         unMateriel.LesAttributions.Add(uneAttribution);
-                        uneAttribution.UnMateriel = unMateriel;
                     }
                 }
 
@@ -61,7 +64,6 @@ namespace MATINFO.Metier
                     if (uneAttribution.IDPersonnel == unPersonnel.IDPersonnel)
                     {
                         unPersonnel.LesAttributions.Add(uneAttribution);
-                        uneAttribution.UnPersonnel = unPersonnel;
                     }
                 }
             }

@@ -140,7 +140,7 @@
             Margin="120,150,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding SelectedItem.EMail, ElementName=lvPersonnel}"
+            Text="{Binding SelectedItem.Email, ElementName=lvPersonnel}"
             TextWrapping="Wrap" />
         <Button
             x:Name="btValiderAjout"

@@ -8,7 +8,7 @@ using Microsoft.Win32;
 namespace MATINFO
 {
     /// <summary>
-    /// Logique d'interaction pour CategorieRep.xaml
+    /// Logique d'interaction pour CategorieWindow.xaml
     /// </summary>
     public partial class CategorieWindow : Window
     {
@@ -22,8 +22,11 @@ namespace MATINFO
             DataContext = this;
         }
         #endregion
-        
+
         #region evenements clicks boutons
+        /// <summary>
+        /// Lancé au clic du bouton en haut à gauche de l'écran. On revient à l'écran d'accueil de l'application (MainWindow.xaml).
+        /// </summary>
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -31,6 +34,9 @@ namespace MATINFO
             this.Close();
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton qui supprime la dernière catégorie sélectionnée.
+        /// </summary>
         private void btSupprimer_Click(object sender, RoutedEventArgs e)
         {
             lvCategorie.IsEnabled = true;
@@ -52,6 +58,10 @@ namespace MATINFO
             }
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton pour ajouter une catégoire. Affiche les champs qui permettre d'ajouter
+        /// et de modifier les catégorie, et le bouton de validation d'ajout.
+        /// </summary>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
@@ -63,6 +73,10 @@ namespace MATINFO
             lvCategorie.IsEnabled = false;
         }
 
+        /// <summary>
+        /// Lancé au clic du bouton pour modifier une catégoire. Affiche les champs qui permettre d'ajouter
+        /// et de modifier les catégoire, et le bouton de validation de modification.
+        /// </summary>
         private void btModifier_Click(object sender, RoutedEventArgs e)
         {
             AfficherControlesAjoutModif();
@@ -73,6 +87,9 @@ namespace MATINFO
             lvCategorie.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Ajoute la catégorie marquée dans les champs d'ajout et de modification.
+        /// </summary>
         private void btValiderAjout_Click(object sender, RoutedEventArgs e)
         {
             new CategorieMateriel(0, tboxNomCategorie.Text).Create();
@@ -84,6 +101,10 @@ namespace MATINFO
 
             lvCategorie.ItemsSource = donneesActuelles.LesCategories;
         }
+
+        /// <summary>
+        /// Modifie la catégorie sélectionnée en fonction des champs d'ajout et de modification.
+        /// </summary>
         private void btValiderModification_Click(object sender, RoutedEventArgs e)
         {
             ((CategorieMateriel)lvCategorie.SelectedItem).Nom = tboxNomCategorie.Text;
@@ -97,6 +118,10 @@ namespace MATINFO
             lvCategorie.ItemsSource = donneesActuelles.LesCategories;
         }
 
+        /// <summary>
+        /// Déclenché au clic du bouton "Annuler", visible uniquement lorsque les champs d'ajout et de modification.
+        /// Cache ces champs, et le texte qui va avec.
+        /// </summary>
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             CacherControlesAjoutModif();
@@ -106,6 +131,9 @@ namespace MATINFO
 
         #region Gestion affichage pour ajout/modification donnée
 
+        /// <summary>
+        /// Affiche les champs d'ajout, de modification, les boutons et les textes qui vont avec.
+        /// </summary>
         private void AfficherControlesAjoutModif()
         {
             tblAnnonceAction.Visibility = Visibility.Visible;
@@ -115,6 +143,9 @@ namespace MATINFO
             btAnnuler.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Cache les champs d'ajout, de modification, les boutons et les textes qui vont avec.
+        /// </summary>
         private void CacherControlesAjoutModif()
         {
             tblAnnonceAction.Visibility = Visibility.Hidden;
@@ -127,6 +158,5 @@ namespace MATINFO
         }
 
         #endregion
-
     }
 }

@@ -218,9 +218,9 @@
             x:Name="cbCategorie"
             Grid.Row="1"
             Width="120"
-            Margin="117,171,0,0"
+            Margin="120,171,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            SelectedIndex="0" />
+            SelectedIndex="0"/>
     </Grid>
 </Window>

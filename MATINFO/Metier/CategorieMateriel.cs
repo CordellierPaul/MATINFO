@@ -63,51 +63,5 @@ namespace MATINFO.Metier
             return lesCategories;
         }
         #endregion
-
-        #region Classes générées
-        /// <pdGenerated>default getter</pdGenerated>
-        public List<Materiel> GetMateriel()
-        {
-            if (LesMateriels == null)
-                LesMateriels = new List<Materiel>();
-            return LesMateriels;
-        }
-   
-        /// <pdGenerated>default setter</pdGenerated>
-        public void SetMateriel(List<Materiel> newMateriel)
-        {
-            RemoveAllMateriel();
-            foreach (Materiel oMateriel in newMateriel)
-                AddMateriel(oMateriel);
-        }
-   
-        /// <pdGenerated>default Add</pdGenerated>
-        public void AddMateriel(Materiel newMateriel)
-        {
-            if (newMateriel == null)
-                return;
-            if (this.LesMateriels == null)
-                this.LesMateriels = new List<Materiel>();
-            if (!this.LesMateriels.Contains(newMateriel))
-                this.LesMateriels.Add(newMateriel);
-        }
-   
-        /// <pdGenerated>default Remove</pdGenerated>
-        public void RemoveMateriel(Materiel oldMateriel)
-        {
-            if (oldMateriel == null)
-                return;
-            if (this.LesMateriels != null)
-                if (this.LesMateriels.Contains(oldMateriel))
-                this.LesMateriels.Remove(oldMateriel);
-        }
-   
-        /// <pdGenerated>default removeAll</pdGenerated>
-        public void RemoveAllMateriel()
-        {
-            if (LesMateriels != null)
-                LesMateriels.Clear();
-        }
-        #endregion
     }
 }
